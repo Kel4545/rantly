@@ -1,12 +1,12 @@
-<% form_for @user, url: registrations_path, html: { class: "registration-form"} do |f| %>
+<%= form_for @user, url: registrations_path  do |f| %>
   <h1>Register</h1>
   <ul>
-  <%= f. label :username %>
-  <%= f. text_field :username, autofocus: true %>
-  <%= f. label :firstname %>
-  <%= f. text_field :firstname, autofocus: true %>
-  <%= f. label :lastname %>
-  <%= f. text_field :lastname, autofocus: true %>
+  <li>><%= f. label :username %>
+  <%= f. text_field :username, autofocus: true %></li>
+  <li><%= f. label :firstname %>
+  <%= f. text_field :firstname, autofocus: true %></li>
+  <li><%= f. label :lastname %>
+  <%= f. text_field :lastname, autofocus: true %></li>
   <%= f. label :password %>
   <%= f. password_field :password, autofocus: true %>
   <%= f. label :bio %>
