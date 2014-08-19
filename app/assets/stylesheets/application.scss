@@ -13,3 +13,59 @@
  *= require_tree .
  *= require_self
  */
+
+.logo {
+  font-size: 200%;
+
+}
+
+.container {
+  width: 960px;
+  margin: 0 auto;
+  padding: 1em;
+  box-sizing: border-box;
+
+}
+
+html {
+  font-family: "Comic Sans MS"
+}
+
+header {
+  background: dimgrey;
+  color: white;
+
+  a {
+    color: white;
+    text-decoration: none;
+  }
+}
+
+.errors {
+  color: maroon;
+  margin-bottom: 1em;
+}
+
+.homepage {
+  text-align: center;
+  font-size: 200%;
+  width: 960px;
+  margin: 0 auto;
+  padding: 1em;
+  box-sizing: border-box;
+  background: white;
+}
+
+.quote {
+  font-size: 65%
+}
+
+.rant {
+  margin: 0 auto;
+  padding: 1em;
+  box-sizing: border-box;
+  background: dimgrey;
+  body {
+    height: 100%;
+  }
+}

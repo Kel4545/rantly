@@ -1,5 +1,10 @@
-<h1> Rant.ly </h1>
+<%= link_to 'Join', register_path(@register) %>
+
+<div class="homepage"><h1>Rantly</h1>
+  <p class="quote">Let it all out</p></div>
+<div class="rant">
 
 <% @rants.each do |rant| %>
   <%= rant %>
 <% end %>
+</div>
