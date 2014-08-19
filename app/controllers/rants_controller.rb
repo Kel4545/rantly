@@ -1,7 +1,7 @@
 class RantsController <  ApplicationController
 
   def index
-    @rants = Rant.order(:rant)
+    @rant = Rant.order(:rant)
   end
 
 end
