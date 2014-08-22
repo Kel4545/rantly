@@ -1,6 +1,6 @@
 <%= form_for @user, url: registrations_path do |f| %>
   <h1>Register</h1>
-  <ul class = "new_person">
+  <ul class="new_person">
     <li><%= f.label :username %>
       <%= f.text_field :username, autofocus: true %>
       <%= f.label :password %>
@@ -11,7 +11,24 @@
       <%= f.text_field :lastname, autofocus: true %></li>
     <%= f.label :bio %>
     <%= f.text_field :bio, autofocus: true %>
-    <%= f.submit "Register" %>
     <p>How often do you rant?</p>
+    <label class="radio">
+      <%= hidden_field_tag :daily, 'false' %>
+      <input type="radio" name="optionsRadios" id="daily" value="true" checked>
+      Daily
+    </label>
+
+    <label class="radio">
+      <%= hidden_field_tag :weekly, 'false' %>
+      <input type="radio" name="optionsRadios" id="weekly" value="true">
+      Weekly
+    </label>
+
+    <label class="radio">
+      <%= hidden_field_tag :monthly, 'false' %>
+      <input type="radio" name="optionsRadios" id="monthly" value="true">
+      Monthly
+    </label>
+    <%= f.submit "Register" %>
   </ul>
 <% end %>
