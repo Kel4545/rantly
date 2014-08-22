@@ -16,6 +16,7 @@ class RegistrationsController < ApplicationController
     )
 
     if @user.save
+      flash[:notice] = "Thank you for registering!"
       redirect_to root_path
     else
       render :new

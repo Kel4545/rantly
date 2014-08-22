@@ -8,9 +8,12 @@
 </head>
 <body>
 <header>
+  <% if flash[:notice] %>
+    <div class="notice"><%= flash[:notice] %></div>
+  <% end %>
   <div class="container">
     <div class="logo">
-      <%= link_to "Rant.ly", root_path %>
+      <%= link_to "Rant.ly", root_path, :class => "text" %>
       <div class="box" style="margin: 5px; border-left: #37731E 1px solid; height: 135px;">
         <p></p>
       </div>

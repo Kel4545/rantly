@@ -34,12 +34,16 @@ html {
 header {
   background: dimgrey;
   color: white;
+  text-align: left;
+
+
 }
 
   a {
     color: white;
     text-decoration: none;
   }
+
 
 
  .errors {
@@ -76,6 +80,10 @@ main {
   float: left;
 }
 
+.instructor-image {
+
+}
+
 /* .new_person {
   list-style-type: none
 }
@@ -88,6 +96,8 @@ main {
     font-size: 20px;
 }
 
+
+
  .register {
   background: #37731E;
   height: 95px;
@@ -96,9 +106,8 @@ main {
   margin-right: 10px;
   margin-top: 15px;
   margin-bottom: 10px;
-  float: left;
+  float: right;
   font-size: 30px;
 }
 
 */
-
