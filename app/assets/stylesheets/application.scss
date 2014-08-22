@@ -14,7 +14,7 @@
  *= require_self
  */
 
-.logo {
+ .logo {
   font-size: 200%;
 
 }
@@ -34,19 +34,20 @@ html {
 header {
   background: dimgrey;
   color: white;
+}
 
   a {
     color: white;
     text-decoration: none;
   }
-}
 
-.errors {
+
+ .errors {
   color: maroon;
   margin-bottom: 1em;
 }
 
-.homepage {
+ .homepage {
   text-align: center;
   font-size: 200%;
   width: 960px;
@@ -56,16 +57,48 @@ header {
   background: white;
 }
 
-.quote {
+ .quote {
   font-size: 65%
 }
 
-.rant {
+main {
   margin: 0 auto;
   padding: 1em;
   box-sizing: border-box;
   background: dimgrey;
-  body {
-    height: 100%;
-  }
+  width: 100%;
 }
+
+
+
+.box {
+  width: 700px;
+  float: left;
+}
+
+/* .new_person {
+  list-style-type: none
+}
+
+ .button {
+    background-color: #333333;
+    color: #ffffff;
+    float: right;
+    padding-top: 50px;
+    font-size: 20px;
+}
+
+ .register {
+  background: #37731E;
+  height: 95px;
+  width: 210px;
+  margin-left: 40px;
+  margin-right: 10px;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  float: left;
+  font-size: 30px;
+}
+
+*/
+

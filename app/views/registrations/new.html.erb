@@ -1,16 +1,17 @@
-<%= form_for @user, url: registrations_path  do |f| %>
+<%= form_for @user, url: registrations_path do |f| %>
   <h1>Register</h1>
-  <ul>
-  <li>><%= f. label :username %>
-  <%= f. text_field :username, autofocus: true %></li>
-  <li><%= f. label :firstname %>
-  <%= f. text_field :firstname, autofocus: true %></li>
-  <li><%= f. label :lastname %>
-  <%= f. text_field :lastname, autofocus: true %></li>
-  <%= f. label :password %>
-  <%= f. password_field :password, autofocus: true %>
-  <%= f. label :bio %>
-  <%= f. text_field :bio, autofocus: true %>
-  <%= f.submit "Register" %>
+  <ul class = "new_person">
+    <li><%= f.label :username %>
+      <%= f.text_field :username, autofocus: true %>
+      <%= f.label :password %>
+      <%= f.password_field :password, autofocus: true %></li>
+    <li><%= f.label :firstname %>
+      <%= f.text_field :firstname, autofocus: true %>
+      <%= f.label :lastname %>
+      <%= f.text_field :lastname, autofocus: true %></li>
+    <%= f.label :bio %>
+    <%= f.text_field :bio, autofocus: true %>
+    <%= f.submit "Register" %>
+    <p>How often do you rant?</p>
   </ul>
-  <% end %>
+<% end %>

@@ -11,13 +11,18 @@
   <div class="container">
     <div class="logo">
       <%= link_to "Rant.ly", root_path %>
+      <div class="box" style="margin: 5px; border-left: #37731E 1px solid; height: 135px;">
+        <p></p>
+      </div>
+      <div class="one">
+        <%= link_to "Join".html_safe, new_registration_path, :class => "button" %>
+      </div>
+      <div class="one">
+        <%= link_to 'Login', rants_path, :class => "register", :method => :get %>
+      </div>
     </div>
   </div>
 </header>
-<main>
-  <div class="container">
-    <%= yield %>
-  </div>
-</main>
+<%= yield %>
 </body>
 </html>

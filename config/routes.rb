@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   post "signin" => "sessions#create"
   get "signout" => "sessions#destroy", as: :signout
   resources :registrations, only: [:new, :create]
-  end
+  resource :rants
+end
