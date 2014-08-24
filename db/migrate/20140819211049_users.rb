@@ -6,6 +6,7 @@ class Users < ActiveRecord::Migration
       t.string :lastname
       t.string :bio
       t.string :password_digest
+      t.string :frequency
 
       t.timestamps
     end

@@ -11,20 +11,13 @@
   <% if flash[:notice] %>
     <div class="notice"><%= flash[:notice] %></div>
   <% end %>
-  <div class="container">
-    <div class="logo">
-      <%= link_to "Rant.ly", root_path, :class => "text" %>
-      <div class="box" style="margin: 5px; border-left: #37731E 1px solid; height: 135px;">
-        <p></p>
-      </div>
-      <div class="one">
-        <%= link_to "Join".html_safe, new_registration_path, :class => "button" %>
-      </div>
-      <div class="one">
-        <%= link_to 'Login', rants_path, :class => "register", :method => :get %>
-      </div>
-    </div>
-  </div>
+  <aside class="logo"><%= link_to "Rant.ly", root_path %></aside>
+  <main class="links">
+  </main>
+  <nav class="join">
+    <%= link_to 'Login', rants_path, :class => "button", :method => :get %>
+    <%= link_to "Join".html_safe, new_registration_path, :class => "green" %>
+  </nav>
 </header>
 <%= yield %>
 </body>

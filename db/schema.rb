@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 20140819211049) do
     t.string   "lastname"
     t.string   "bio"
     t.string   "password_digest"
+    t.string   "frequency"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
