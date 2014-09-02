@@ -12,8 +12,7 @@ class RegistrationsController < ApplicationController
       firstname: params[:user][:firstname],
       lastname: params[:user][:lastname],
       bio: params[:user][:bio],
-      password: params[:user][:password]
-    )
+      password: params[:user][:password])
 
     if @user.save
       flash[:notice] = "Thank you for registering!"

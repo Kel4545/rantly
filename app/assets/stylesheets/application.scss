@@ -79,15 +79,20 @@ html {
 }
 
 .join {
-  color: white
+  color: white;
+  padding-top: 1.5em;
+  padding-right: 1em;
 }
 
  .quote {
   font-size: 65%;
+  text-align: center;
  }
 
  img {
    height: 200px;
+   float: left;
+   padding-right: 1em;
  }
 
 .rant_homepage {
@@ -96,6 +101,23 @@ html {
   flex-shrink: 0;
   flex-basis: 200px;
   align-items: center;
+  color: white;
+  padding-bottom: 5em;
+}
+
+.rant {
+  padding-left: 10em;
+  padding-right: 10em;
+  padding-top: 5em;
+  text-align: left;
+}
+
+
+li {
+  list-style: none;
+}
+
+a:link {
   color: white;
 }
 
