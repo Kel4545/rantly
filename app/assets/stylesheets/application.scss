@@ -19,7 +19,7 @@ html {
 
 }
 
-.logo {
+aside.logo {
   flex: 0 0 10rem;
   display: flex;
   align-items: center;
@@ -28,7 +28,7 @@ html {
   color: white;
   font-size: 2.5vw;
   flex-wrap: wrap;
-
+  border-right: 1px solid green;
 }
 
  header {
