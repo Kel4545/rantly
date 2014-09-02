@@ -19,6 +19,12 @@ html {
 
 }
 
+
+.rants_quote {
+  padding-bottom: 3em;
+  font-size: 125%;
+}
+
 aside.logo {
   flex: 0 0 10rem;
   display: flex;
@@ -38,7 +44,6 @@ aside.logo {
   flex-flow: row nowrap;
   justify-content: space-between;
   height: 80px;
-
 }
 
 .header-nav {
@@ -102,7 +107,7 @@ aside.logo {
   flex-basis: 200px;
   align-items: center;
   color: white;
-  padding-bottom: 5em;
+  padding-bottom: 9em;
 }
 
 .rant {
@@ -127,4 +132,16 @@ a.button {
   text-decoration: underline;
 }
 
+.registration {
+  padding-top: 2em;
+  border: 2px solid black;
+}
 
+.register_button {
+  background-color: green;
+  color: white;
+}
+
+.notice {
+  color: green;
+}

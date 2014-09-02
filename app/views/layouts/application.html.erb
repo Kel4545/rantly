@@ -8,9 +8,6 @@
 </head>
 <body>
 <header>
-  <% if flash[:notice] %>
-    <div class="notice"><%= flash[:notice] %></div>
-  <% end %>
   <aside class="logo"><%= link_to "Rant.ly", root_path %></aside>
   <main class="links">
   </main>
@@ -19,6 +16,9 @@
     <%= link_to "Join".html_safe, new_registration_path, :class => "green" %>
   </nav>
 </header>
+<% if flash[:notice] %>
+  <div class="notice"><%= flash[:notice] %></div>
+<% end %>
 <%= yield %>
 </body>
 </html>

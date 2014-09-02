@@ -1,4 +1,5 @@
-<%= form_for @user, url: registrations_path do |f| %>
+<br>
+<%= form_for @user, :html=> { class: 'registration' }, url: registrations_path do |f| %>
   <h1>Register</h1>
   <ul class="new_person">
     <li><%= f.label :username %>
@@ -29,6 +30,7 @@
       <input type="radio" name="optionsRadios" id="monthly" value="true">
       Monthly
     </label>
-    <%= f.submit "Register" %>
+    <br>
+    <%= f.submit "Register", :class => 'register_button' %>
   </ul>
 <% end %>
