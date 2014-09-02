@@ -85,8 +85,8 @@ html {
 }
 
  .quote {
-  font-size: 65%;
-  text-align: center;
+  font-size: 55%;
+  padding-right: .5em;
  }
 
  img {
@@ -117,8 +117,14 @@ li {
   list-style: none;
 }
 
-a:link {
+a {
   color: white;
+  text-decoration: none;
+}
+
+a.button {
+  color: white;
+  text-decoration: underline;
 }
 
 
