@@ -1,4 +1,5 @@
-<%= form_for @user, url: signin_path, html: { class: "signin-form" } do |f| %>
+<br>
+<%= form_for @user, url: signin_path, html: { class: "registration" } do |f| %>
   <% f.object.errors.full_messages.each do |error| %>
     <div class="errors">
       <%= error %>
