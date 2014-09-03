@@ -1,6 +1,7 @@
+<body class="grey">
 <br>
 <%= form_for @user, :html=> { class: 'registration' }, url: registrations_path do |f| %>
-  <h1>Register</h1>
+  <h1 style="padding-left: 1.2em">Register</h1>
   <ul class="new_person">
     <li><%= f.label :username %>
       <%= f.text_field :username, autofocus: true %>
@@ -31,6 +32,8 @@
       Monthly
     </label>
     <br>
-    <%= f.submit "Register", :class => 'register_button' %>
+    <br>
+    <%= f.submit "REGISTER", :class => 'register_button' %>
   </ul>
 <% end %>
+

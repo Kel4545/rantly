@@ -130,6 +130,7 @@ a {
 a.button {
   color: white;
   text-decoration: underline;
+  padding-right: 1em;
 }
 
 .registration {
@@ -138,13 +139,23 @@ a.button {
   width: 50%;
   margin-left: auto;
   margin-right: auto;
+  background-color: white;
 }
 
 .register_button {
   background-color: green;
   color: white;
+  width: 420px;
+  height: 40px;
+  font-family: "Comic Sans MS";
+  font-size: 100%;
 }
 
 .notice {
   color: green;
 }
+
+.grey {
+  background-color: grey;
+}
+
