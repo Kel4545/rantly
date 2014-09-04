@@ -1,6 +1,6 @@
 class RantsController < ApplicationController
 
   def show
-    @rant = Rant.order(:rant)
+    @rant = Rant.order(:name)
   end
 end
