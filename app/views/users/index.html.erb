@@ -1,7 +1,9 @@
-
 <%= link_to "Logout".html_safe, signout_path, :class => "green" %>
 
 
-
+<h1>Welcome</h1>
 <p>You are logged in successfully.</p>
-<%= render @user %>
+
+<% @users.each do |user| %>
+  <%= link_to "#{user.username}", edit_user_path(id: user.id), :class => "userlink" %>
+<% end %>
