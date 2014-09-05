@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   has_many :rants
+  accepts_nested_attributes_for :rants
   has_secure_password
 
   validates :username, presence: true, uniqueness: {case_sensitive: false, message: "Username cannot be blank"}
@@ -7,5 +8,4 @@ class User < ActiveRecord::Base
   validates :lastname, presence: true
   validates :password, presence: true
 
-  accepts_nested_attributes_for :rants
 end
