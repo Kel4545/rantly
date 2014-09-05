@@ -6,4 +6,6 @@ class User < ActiveRecord::Base
   validates :firstname, presence: true
   validates :lastname, presence: true
   validates :password, presence: true
+
+  accepts_nested_attributes_for :rants
 end
