@@ -8,7 +8,7 @@
   <%= link_to current_user.username, edit_user_path(id: user.id), :class => "userlink" %>
 <% end %>
 
-<%= form_for @rant, rants_path %>
+<%= form_for @rants, url: rants_path %>
 <%= f.label :about %>
 <%= f.text_field :about, autofocus: true %>
 <%= f.label :rant %>

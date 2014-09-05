@@ -13,7 +13,7 @@
   </main>
   <nav class="join">
     <%= link_to 'Login', signin_path, :class => "button", :method => :get %>
-    <%= link_to "JOIN".html_safe, new_registration_path, :class => "green" %>
+    <%= link_to "JOIN".html_safe, new_user_path, :class => "green" %>
   </nav>
 </header>
 <% if flash[:notice] %>
