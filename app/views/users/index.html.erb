@@ -5,5 +5,12 @@
 <p>You are logged in successfully.</p>
 
 <% @users.each do |user| %>
-  <%= link_to "#{user.username}", edit_user_path(id: user.id), :class => "userlink" %>
+  <%= link_to current_user.username, edit_user_path(id: user.id), :class => "userlink" %>
+<% end %>
+
+<%= form_for @rant, rants_path %>
+<%= f.label :about %>
+<%= f.text_field :about, autofocus: true %>
+<%= f.label :rant %>
+<%= f.text_field :rant, autofocus: true %>
 <% end %>

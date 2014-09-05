@@ -2,7 +2,7 @@
 <br>
 
 <%= form_for @user, :html => {class: 'registration'}, url: users_path do |f| %>
-  <h1 style="padding-left: 1.2em">Register</h1>
+  <h1 style="padding-left: 1.2em">Edit <%= current_user.username %></h1>
   <ul class="new_person">
     <li style="float: left; margin-right: 20px;"><%= f.label :username %>
       <%= f.text_field :username, autofocus: true %>
