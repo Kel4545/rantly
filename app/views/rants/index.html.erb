@@ -3,17 +3,16 @@
   <main class="links">
   </main>
   <nav class="join">
+    <%= link_to "Dashboard" %> <%= link_to "Following" %> <%= link_to "Favorites" %> <%= link_to "Search" %>
     <%= link_to 'Login', signin_path, :class => "button", :method => :get %>
     <%= link_to "Logout".html_safe, signout_path, :class => "green" %>
   </nav>
 </header>
 
-<%= link_to "Dashboard" %> <%= link_to "Following" %> <%= link_to "Favorites" %>  <%= link_to "Search" %>
 
 <h1>Welcome, <%= link_to current_user.username, edit_user_path(@users), :class => "userlink" %> </h1>
 
-<h1>Latest Rants</h1>
-
+<div class ="user">
 <%= image_tag current_user.url %>
 <ul>
   <%= form_for @rants, url: user_rants_path(@users) do |f| %>
@@ -26,6 +25,8 @@
     <li><%= f.submit "RANT", :class => "bigger_green" %></li>
   <% end %>
 </ul>
+</div>
+<h1>Latest Rants</h1>
 <ul>
   <h1> My Rants </h1>
   <% @rant.each do |rant| %>
