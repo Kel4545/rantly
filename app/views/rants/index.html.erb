@@ -9,22 +9,21 @@
   </nav>
 </header>
 
-
-<h1>Welcome, <%= link_to current_user.username, edit_user_path(@users), :class => "userlink" %> </h1>
-
-<div class ="user">
-<%= image_tag current_user.url %>
-<ul>
-  <%= form_for @rants, url: user_rants_path(@users) do |f| %>
-    <li><%= f.label :about, "A rant about:" %></li>
-    <li><%= f.text_field :about, autofocus: true %></li>
-    <br style="line-height:20px">
-    <li><%= f.label :rant, "Rant:" %></li>
-    <li><%= f.text_field :rant, autofocus: true %></li>
-    <br>
-    <li><%= f.submit "RANT", :class => "bigger_green" %></li>
-  <% end %>
-</ul>
+<div class="user">
+  <br>
+  <h1>Welcome, <%= link_to current_user.username, edit_user_path(@users), :class => "userlink" %> </h1>
+  <%= image_tag current_user.url %>
+  <ul>
+    <%= form_for @rants, url: user_rants_path(@users) do |f| %>
+      <li><%= f.label :about, "A rant about:" %></li>
+      <li><%= f.text_field :about, autofocus: true %></li>
+      <br style="line-height:20px">
+      <li><%= f.label :rant, "Rant:" %></li>
+      <li><%= f.text_field :rant, autofocus: true %></li>
+      <br>
+      <li><%= f.submit "RANT", :class => "bigger_green" %></li>
+    <% end %>
+  </ul>
 </div>
 <h1>Latest Rants</h1>
 <ul>
