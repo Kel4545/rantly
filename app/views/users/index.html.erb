@@ -2,10 +2,10 @@
 
 
 <h1>Welcome</h1>
-<p>You are logged in successfully.</p>
+
 
 <% @users.each do |user| %>
   <%= link_to current_user.username, edit_user_path(user), :class => "userlink" %>
 <% end %>
 
-<%= form_for @rants, url: user_rant_path %>
+

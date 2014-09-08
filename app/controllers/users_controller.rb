@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   skip_before_filter :ensure_authenticated_user
 
   def index
-    @users = User.all
+    @users = User.find(params[:id])
     @rants = Rant.new
   end
 

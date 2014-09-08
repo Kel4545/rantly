@@ -14,3 +14,9 @@ User.create!(
   password: 'password',
   password_confirmation: 'password'
 )
+
+Rant.create!(
+  rant: "I am a delicious Bacon Bob!",
+  about: "Breakfast sandwich",
+  user_id: 3
+)

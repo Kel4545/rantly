@@ -1,16 +1,22 @@
 <%= link_to "Logout".html_safe, signout_path, :class => "green" %>
 
 
-<h1>Welcome</h1>
-<p>You are logged in successfully.</p>
+<h1>Welcome, <%=current_user.username %> </h1>
 
-<% @users.each do |user| %>
-  <%= link_to current_user.username, edit_user_path(id: user.id), :class => "userlink" %>
-<% end %>
 
-<%= form_for @rants, url: user_rants_path do |f| %>
+<%= link_to current_user.username, edit_user_path(@users), :class => "userlink" %>
+
+
+<%= form_for @rants, url: user_rants_path(@users) do |f| %>
   <%= f.label :about %>
   <%= f.text_field :about, autofocus: true %>
   <%= f.label :rant %>
   <%= f.text_field :rant, autofocus: true %>
+  <%= f.submit "Confirm" %>
+<% end %>
+<ul>
+<% @rant.each do |rant| %>
+<li><%= rant.about %></li>
+<li><%= rant.rant %></li>
+    </ul>
 <% end %>

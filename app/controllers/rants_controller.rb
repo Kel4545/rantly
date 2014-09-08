@@ -3,7 +3,10 @@ class RantsController < ApplicationController
   def index
     @users = User.find(params[:user_id])
     @rants = Rant.new
+    @rant = Rant.all
   end
+
+
 
   def create
     rant_params = params.require(:rant).permit(:about, :rant).merge(user_id: params[:user_id])
