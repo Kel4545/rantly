@@ -13,13 +13,6 @@
 <h1>Welcome, <%= link_to current_user.username, edit_user_path(@users), :class => "userlink" %> </h1>
 
 <h1>Latest Rants</h1>
-<% @users.rants.each do |user| %>
-  <% if user != current_user %>
-    <%= user.img %>
-    <%= user.about %>
-    <%= user.rant %>
-  <% end %>
-<% end %>
 
 <%= image_tag current_user.url %>
 <ul>
