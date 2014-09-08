@@ -7,15 +7,6 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<header>
-  <aside class="logo"><%= link_to "Rant.ly", root_path %></aside>
-  <main class="links">
-  </main>
-  <nav class="join">
-    <%= link_to 'Login', signin_path, :class => "button", :method => :get %>
-    <%= link_to "JOIN".html_safe, new_user_path, :class => "green" %>
-  </nav>
-</header>
 <% if flash[:notice] %>
   <div class="notice"><%= flash[:notice] %></div>
 <% end %>

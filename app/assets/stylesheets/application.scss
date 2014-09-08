@@ -169,3 +169,17 @@ a.button {
 .userlink {
   color: black
 }
+
+a.delete {
+  color: blue;
+  text-decoration: underline;
+}
+
+.bigger_green {
+    padding: .5rem 3rem;
+    font-size: 1.25rem;
+    background-color: green;
+    color: white;
+    text-decoration: none;
+    width: 12em
+}

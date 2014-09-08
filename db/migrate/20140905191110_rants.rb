@@ -7,3 +7,4 @@ class Rants < ActiveRecord::Migration
     end
   end
 end
+

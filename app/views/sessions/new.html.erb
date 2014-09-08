@@ -1,4 +1,15 @@
+<header>
+  <aside class="logo"><%= link_to "Rant.ly", root_path %></aside>
+  <main class="links">
+  </main>
+  <nav class="join">
+    <%= link_to 'Login', signin_path, :class => "button", :method => :get %>
+    <%= link_to "JOIN".html_safe, new_user_path, :class => "green" %>
+  </nav>
+</header>
+
 <br>
+
 <%= form_for @user, url: signin_path, html: { class: "registration" } do |f| %>
   <% f.object.errors.full_messages.each do |error| %>
     <div class="errors">

@@ -7,12 +7,25 @@ class RantsController < ApplicationController
   end
 
 
-
   def create
-    rant_params = params.require(:rant).permit(:about, :rant).merge(user_id: params[:user_id])
-    @rant = Rant.new(rant_params)
+    @rant = Rant.new(
+      about: params[:rant][:about],
+      rant: params[:rant][:rant],
+      user_id: params[:user_id]
+    )
     if @rant.save
       redirect_to user_rants_path, notice: "Rant was created successfully!"
+    else
+      render :new
+    end
+  end
+
+  def destroy
+    @rant = Rant.find(params[:id])
+    @rant.destroy
+    if @rant.save
+      flash[:notice] = "Rant was deleted successfully!"
+      redirect_to user_rants_path
     else
       render :new
     end

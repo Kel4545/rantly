@@ -5,6 +5,7 @@ class Users < ActiveRecord::Migration
       t.string :firstname
       t.string :lastname
       t.string :bio
+      t.string :url
       t.string :password_digest
       t.string :frequency
 

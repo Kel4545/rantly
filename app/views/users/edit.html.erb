@@ -1,3 +1,13 @@
+<header>
+  <aside class="logo"><%= link_to "Rant.ly", root_path %></aside>
+  <main class="links">
+  </main>
+  <nav class="join">
+    <%= link_to 'Login', signin_path, :class => "button", :method => :get %>
+    <%= link_to "JOIN".html_safe, new_user_path, :class => "green" %>
+  </nav>
+</header>
+
 <br>
 <br>
 
