@@ -16,7 +16,7 @@ class RantsController < ApplicationController
     if @rant.save
       redirect_to user_rants_path, notice: "Rant was created successfully!"
     else
-      render :new
+      redirect_to user_rants_path
     end
   end
 
@@ -30,5 +30,4 @@ class RantsController < ApplicationController
       render :new
     end
   end
-
 end

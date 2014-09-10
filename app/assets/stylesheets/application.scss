@@ -181,12 +181,18 @@ a.delete {
     background-color: green;
     color: white;
     text-decoration: none;
-    width: 12em
+    width: 12em;
+    border: 2px solid green;
 }
 
 .user {
+  float: left;
   background-color: dimgrey;
-  flex: 0 10 0rem;
   width: 20em;
-  height: 120em
+  height: 95em;
+}
+
+.rant_dashboard {
+  text-align: center;
+  float: right;
 }
