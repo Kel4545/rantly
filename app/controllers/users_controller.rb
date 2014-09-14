@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-  skip_before_filter :ensure_authenticated_user
+  
 
   def index
     @users = User.find(params[:id])
