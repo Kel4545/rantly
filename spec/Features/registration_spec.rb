@@ -9,6 +9,7 @@ feature 'Registration' do
     fill_in 'First name', with: 'Bacon'
     fill_in 'Last name', with: 'Bob'
     fill_in 'Bio', with: 'I love bacon'
+    click_button 'Join'
   end
 
   scenario "user must fill in all fields" do
