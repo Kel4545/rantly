@@ -15,31 +15,22 @@
   <h1 style="position: relative; left: 2.6em"><%= link_to current_user.username, edit_user_path(@users), :class => "userlink" %></h1>
   <%= image_tag current_user.url %>
   <ul>
-    <%= form_for @rants, url: user_rants_path(@users) do |f| %>
-      <li><%= f.label :about, "A rant about:" %></li>
-      <li><%= f.text_field :about, autofocus: true %></li>
-      <br style="line-height:20px">
-      <li><%= f.label :rant, "Rant:" %></li>
-      <li><%= f.text_field :rant, autofocus: true %></li>
-      <br>
-      <li><%= f.submit "RANT", :class => "bigger_green" %></li>
-    <% end %>
+    <%= render 'form' %>
   </ul>
 </div>
 <div class=rant_dashboard>
   <h1 style="position: relative; right: 10em">Latest Rants</h1>
   <% @user.each do |user| %>
-    <%= user.firstname %>
+    <%= link_to user.firstname, user_path(@users), :class => "link" %>
   <% end %>
   <% link_to "Follow", users_path, :class => "delete" %>
   <% @rant.each do |rant| %>
-    <li><%= link_to rant.rant, user_rants_path(id: rant.id) %></li> <%= link_to "Delete", user_rant_path(rant.user_id, rant.id), :class => "delete", :method => :delete %>
+    <li><%= link_to rant.rant, user_rants_path, :class => "link" %></li> <%= link_to "Delete", user_rant_path(rant.user_id, rant.id), :class => "delete", :method => :delete %>
   <% end %>
-
-
   <h1 style="position: relative; right: 10em"> My Rants </h1>
   <% @rant.each do |rant| %>
     <li><%= rant.about %></li>
-    <li><%= link_to rant.rant, user_rants_path(@user) %></li> <%= link_to "Delete", user_rant_path(rant.user_id, rant.id), :class => "delete", :method => :delete %>
+    <li><%= link_to rant.rant, user_rants_path, :class => "link" %></li> <%= link_to "Delete", user_rant_path(rant.user_id, rant.id), :class => "delete", :method => :delete %>
   <% end %>
 </div>
+
