@@ -8,3 +8,7 @@ class User < ActiveRecord::Base
   validates :lastname, presence: true
   validates :password, presence: true
 end
+
+def full_name
+  "#{firstname} #{lastname}"
+end
