@@ -1,10 +1,7 @@
 class UsersController < ApplicationController
 
-  
-
   def index
-    @users = User.find(params[:id])
-    @rants = Rant.new
+
   end
 
   def new

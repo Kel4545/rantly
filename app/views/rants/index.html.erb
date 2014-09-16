@@ -3,7 +3,7 @@
   <main class="links">
   </main>
   <nav class="join">
-    <%= link_to "Dashboard" %> <%= link_to "Following" %> <%= link_to "Favorites" %> <%= link_to "Search" %>
+    <%= link_to "Dashboard" %> <%= link_to "Following", users_path %> <%= link_to "Favorites" %> <%= link_to "Search" %>
     <%= link_to 'Login', signin_path, :class => "button", :method => :get %>
     <%= link_to "Logout".html_safe, signout_path, :class => "green" %>
   </nav>
@@ -28,10 +28,18 @@
 </div>
 <div class=rant_dashboard>
   <h1 style="position: relative; right: 10em">Latest Rants</h1>
+  <% @user.each do |user| %>
+    <%= user.firstname %>
+  <% end %>
+  <% link_to "Follow", users_path, :class => "delete" %>
+  <% @rant.each do |rant| %>
+    <li><%= link_to rant.rant, user_rants_path(id: rant.id) %></li> <%= link_to "Delete", user_rant_path(rant.user_id, rant.id), :class => "delete", :method => :delete %>
+  <% end %>
+
 
   <h1 style="position: relative; right: 10em"> My Rants </h1>
   <% @rant.each do |rant| %>
     <li><%= rant.about %></li>
-    <li><%= rant.rant %></li> <%= link_to "Delete", user_rant_path(rant.user_id, rant.id), :class => "delete", :method => :delete %>
+    <li><%= link_to rant.rant, user_rants_path(@user) %></li> <%= link_to "Delete", user_rant_path(rant.user_id, rant.id), :class => "delete", :method => :delete %>
   <% end %>
 </div>
