@@ -1,14 +1,3 @@
-<header>
-  <aside class="logo"><%= link_to "Rant.ly", root_path %></aside>
-  <main class="links">
-  </main>
-  <nav class="join">
-    <%= link_to "Dashboard" %> <%= link_to "Following", users_path %> <%= link_to "Favorites" %> <%= link_to "Search" %>
-    <%= link_to 'Login', signin_path, :class => "button", :method => :get %>
-    <%= link_to "Logout".html_safe, signout_path, :class => "green" %>
-  </nav>
-</header>
-
 <div class="user">
   <br>
 
@@ -20,15 +9,15 @@
 </div>
 <div class=rant_dashboard>
   <div class="position"><h1>Latest Rants</h1>
-    <% @other_users.each do |user| %>
+    <% other_users.each do |user| %>
       <%= user.username %>
+      <%= link_to "Follow", user_path(@users), :class => "link" %>
     <% end %>
-    <% link_to "Follow", users_path, :class => "delete" %>
-    <% @other_users.rants.each do |rant| %>
+    <% @rant.each do |rant| %>
       <li><%= link_to rant.rant, user_rants_path, :class => "link" %></li> <%= link_to "Delete", user_rant_path(rant.user_id, rant.id), :class => "delete", :method => :delete %>
     <% end %>
     <h1>My Rants</h1>
-    <% @rant.each do |rant| %>
+    <% current_user.rants.each do |rant| %>
       <li><%= rant.about %></li>
       <li><%= link_to rant.rant, user_rants_path, :class => "link" %></li> <%= link_to "Delete", user_rant_path(rant.user_id, rant.id), :class => "delete", :method => :delete %>
     <% end %>

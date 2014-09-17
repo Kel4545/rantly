@@ -6,11 +6,11 @@ class UsersController < ApplicationController
   end
 
   def index
-
   end
 
   def new
     @user = User.new
+    render :layout => "dashboard"
   end
 
   def create

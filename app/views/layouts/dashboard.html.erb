@@ -6,9 +6,8 @@
     <main class="links">
     </main>
     <nav class="join">
-      <%= link_to "Dashboard" %> <%= link_to "Following", users_path %> <%= link_to "Favorites" %> <%= link_to "Search" %>
       <%= link_to 'Login', signin_path, :class => "button", :method => :get %>
-      <%= link_to "Logout".html_safe, signout_path, :class => "green" %>
+      <%= link_to "JOIN".html_safe, new_user_path, :class => "green" %>
     </nav>
   </header>
   <title>Rant.ly</title>

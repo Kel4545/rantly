@@ -5,7 +5,6 @@ class RantsController < ApplicationController
     @user = User.all
     @rants = Rant.new
     @rant = Rant.all
-    @other_users = User.where.not(id: session[:user_id])
   end
 
   def show
