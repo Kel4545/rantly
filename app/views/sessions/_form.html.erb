@@ -1,4 +1,4 @@
-<%= form_for @user, url: signin_path, html: { class: "registration" } do |f| %>
+<%= form_for @user, url: signin_path, html: { class: "sessions" } do |f| %>
   <% f.object.errors.full_messages.each do |error| %>
     <div class="errors">
       <%= error %>
@@ -12,7 +12,10 @@
     <%= f.label :password %>
     <%= f.password_field :password %>
   </div>
+  <br>
   <div>
     <%= f.submit "Login", :class => 'register_button' %>
-  </div>
 <% end %>
+<br>
+<br>
+</div>
