@@ -2,7 +2,6 @@ class RantsController < ApplicationController
 
   def index
     @users = User.find(params[:user_id])
-    @user = User.all
     @rants = Rant.new
     @rant = Rant.all
   end
