@@ -1,0 +1,42 @@
+<%= form_for @user, :html => {class: 'registration'}, url: user_path do |f| %>
+  <h1 style="padding-left: 1.2em">Register</h1>
+  <ul class="new_person">
+    <li style="float: left; margin-right: 20px;"><%= f.label :username %>
+      <%= f.text_field :username, autofocus: true %>
+      <%= f.label :password %>
+      <%= f.password_field :password, autofocus: true %></li>
+    <br>
+    <li style="float: left; margin-right: 20px;"><%= f.label :firstname %>
+      <%= f.text_field :firstname, autofocus: true %>
+      <%= f.label :lastname %>
+      <%= f.text_field :lastname, autofocus: true %></li>
+    <br>
+    <br>
+    <li style="float: left; margin-right: 20px;"><%= f.label :bio %>
+      <%= f.text_field :bio, autofocus: true, :class => 'textbox' %></li>
+    <br><br>
+    <br><br>
+    <br>
+    <div>
+      <p>How often do you rant?</p>
+      <div>
+        <%= f.radio_button(:frequency, 'Daily') %>
+        <%= f.label(:frequency_daily, 'Daily') %>
+      </div>
+      <div>
+        <%= f.radio_button(:frequency, 'Weekly') %>
+        <%= f.label(:frequency_weekly, 'Weekly') %>
+      </div>
+      <div>
+        <%= f.radio_button(:frequency, 'Monthly') %>
+        <%= f.label(:frequency_monthly, 'Monthly') %>
+      </div>
+    </div>
+    </div>
+    </div>
+    <br>
+    <%= f.submit "EDIT", :class => 'register_button' %>
+    </div>
+  </ul>
+
+<% end %>

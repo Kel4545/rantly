@@ -1,36 +1,36 @@
 class RantsController < ApplicationController
 
-  def index
-    @users = User.find(params[:user_id])
-    @rants = Rant.new
-    @rant = Rant.all
+  def show
+    @rant = Rant.find(params[:id])
   end
 
-  def show
-    @rants = Rant.find(params[:id])
+  def new
+    @user = User.find(params[:user_id])
+    @rant = Rant.new
   end
 
   def create
-    @rant = Rant.new(
-      about: params[:rant][:about],
-      rant: params[:rant][:rant],
-      user_id: params[:user_id]
-    )
+    @user = User.find(params[:user_id])
+    @rant = Rant.new(accepted_params)
     if @rant.save
-      redirect_to user_rants_path, notice: "Rant was created successfully!"
+      redirect_to dashboard_path(@user.id), notice: "Rant was created successfully!"
     else
-      redirect_to user_rants_path
+      flash[:notice] = "all rant fields are required"
+      render :'dashboard/show'
     end
   end
 
   def destroy
     @rant = Rant.find(params[:id])
     @rant.destroy
-    if @rant.save
       flash[:notice] = "Rant was deleted successfully!"
-      redirect_to user_rants_path
-    else
-      render :new
+      redirect_to
     end
   end
+
+
+private
+
+def accepted_params
+  params.require(:rant).permit(:about, :rant).merge({user_id: @user.id})
 end

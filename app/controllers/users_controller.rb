@@ -2,7 +2,7 @@ class UsersController < ApplicationController
 
   def show
   @user = User.find(params[:id])
-  @rants = Rant.all
+  @rant = Rant.all
   end
 
   def index
@@ -10,7 +10,7 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
-    render :layout => "dashboard"
+    render :layout => "root"
   end
 
   def create
@@ -41,7 +41,7 @@ class UsersController < ApplicationController
       lastname: params[:user][:lastname],
       bio: params[:user][:bio],
       password: params[:user][:password])
-    redirect_to "/user/#{@user.id}"
+    redirect_to dashboard_path(@user)
   end
 
   def destroy

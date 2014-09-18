@@ -1,4 +1,4 @@
-<%= form_for @user, :html => {class: 'registration'}, url: users_path do |f| %>
+<%= form_for @user, :html => {class: 'registration'}, url: user_path do |f| %>
 <h1 style="padding-left: 1.2em">Register</h1>
 <ul class="new_person">
   <li style="float: left; margin-right: 20px;"><%= f.label :username %>
@@ -19,24 +19,21 @@
   <br>
   <div>
     <p>How often do you rant?</p>
-    <label class="radio">
-      <%= hidden_field_tag :daily, 'false' %>
-      <input type="radio" name="optionsRadios" id="daily" value="true" checked>
-      Daily
-    </label>
-
-    <label class="radio">
-      <%= hidden_field_tag :weekly, 'false' %>
-      <input type="radio" name="optionsRadios" id="weekly" value="true">
-      Weekly
-    </label>
-
-    <label class="radio">
-      <%= hidden_field_tag :monthly, 'false' %>
-      <input type="radio" name="optionsRadios" id="monthly" value="true">
-      Monthly
-    </label>
-    <br>
+    <div>
+      <%= f.radio_button(:frequency, 'Daily') %>
+      <%= f.label(:frequency_daily, 'Daily') %>
+    </div>
+    <div>
+      <%= f.radio_button(:frequency, 'Weekly') %>
+      <%= f.label(:frequency_weekly, 'Weekly') %>
+    </div>
+    <div>
+      <%= f.radio_button(:frequency, 'Monthly') %>
+      <%= f.label(:frequency_monthly, 'Monthly') %>
+    </div>
+  </div>
+  </div>
+</div>
     <br>
     <%= f.submit "REGISTER", :class => 'register_button' %>
   </div>
