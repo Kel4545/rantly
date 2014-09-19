@@ -26,8 +26,7 @@ $(document).ready(function(){
     }
     else{
       $(this).bind({
-        mouseleave:function(){$(this).text("Following");},
-        mouseenter:function(){$(this).text("Unfollow");}
+        mouseleave:function(){$(this).text("Following");}
       });
     }
   });
