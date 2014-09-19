@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   end
 
   resources :dashboard, only: "show"
+  resources :following
   end

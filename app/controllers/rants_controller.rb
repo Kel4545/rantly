@@ -15,22 +15,21 @@ class RantsController < ApplicationController
     if @rant.save
       redirect_to dashboard_path(@user.id), notice: "Rant was created successfully!"
     else
-      flash[:notice] = "all rant fields are required"
-      render :'dashboard/show'
+      redirect_to dashboard_path(@user.id)
     end
   end
 
   def destroy
     @rant = Rant.find(params[:id])
-    @rant.destroy
-      flash[:notice] = "Rant was deleted successfully!"
-      redirect_to
-    end
+    @rant.destroy!
+    flash[:notice] = "Rant was deleted successfully!"
+    redirect_to dashboard_path(@user.id)
   end
 
 
-private
+  private
 
-def accepted_params
-  params.require(:rant).permit(:about, :rant).merge({user_id: @user.id})
+  def accepted_params
+    params.require(:rant).permit(:about, :rant).merge({user_id: @user.id})
+  end
 end

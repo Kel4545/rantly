@@ -16,7 +16,7 @@ User.create!(
 )
 
 Rant.create!(
-  rant: "I am a delicious Bacon Bob!",
+  rant: "I am a delicious Bacon Bob! I love to eat Bacon, Bacon and more Bacon. Bacon Bacon Bacon Bacon Bacon Bacon Bacon Bacon Bacon Bacon Bacon Bacon",
   about: "Breakfast sandwich",
   user_id: 3
 )

@@ -1,4 +1,7 @@
 class Rant < ActiveRecord::Base
-belongs_to :user
-  validates_presence_of :rant, {message: "Your rant could not be created"}
+
+  belongs_to :user
+  validates :about, presence: true, :length => {:within => 1..40}
+  validates :rant, presence: true, :length => {:minimum => 140}
+
 end

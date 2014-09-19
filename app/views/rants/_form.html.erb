@@ -1,9 +1,18 @@
 <%= form_for [@user, @rant] do |f| %>
-  <li><%= f.label :about, "A rant about:" %></li>
-  <li><%= f.text_field :about, autofocus: true %></li>
-  <br style="line-height:20px">
-  <li><%= f.label :rant, "Rant:" %></li>
-  <li><%= f.text_field :rant, autofocus: true %></li>
-  <br>
-  <li><%= f.submit "RANT", :class => "bigger_green" %></li>
-<% end %>
+  <div class="errors">
+  <% if f.object.errors.any? %>
+    <ul>
+      <% f.object.errors.full_messages.each do |error| %>
+        <li> <%= error %> </li>
+      <% end %>
+    </ul>
+  <% end %>
+    </div>
+    <li><%= f.label :about, "A rant about:" %></li>
+    <li><%= f.text_field :about, autofocus: true %></li>
+    <br style="line-height:20px">
+    <li><%= f.label :rant, "Rant:" %></li>
+    <li><%= f.text_field :rant, autofocus: true %></li>
+    <br>
+    <li><%= f.submit "RANT", :class => "bigger_green" %></li>
+  <% end %>

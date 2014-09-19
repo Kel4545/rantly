@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 20140908220108) do
 
   create_table "rants", force: true do |t|
     t.string "about"
-    t.string "rant"
+    t.text   "rant"
     t.string "user_id"
   end
 
