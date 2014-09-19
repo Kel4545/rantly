@@ -1,32 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <header>
-    <aside class="logo"><%= link_to "Rant.ly", root_path %></aside>
-    <main class="links">
-    </main>
-    <nav class="join">
-      <%= link_to "Dashboard", dashboard_path(@user.id) %> <%= link_to "Following", user_follows_path(@user.id) %> <%= link_to "Favorites" %> <%= link_to "Search" %>
-      <%= link_to "Logout".html_safe, signout_path, :class => "green" %>
-    </nav>
-  </header>
   <title>Rant.ly</title>
   <%= stylesheet_link_tag 'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
+<body>
+<%= render 'layouts/header' %>
 <div class="user">
   <br>
+
   <div class="style"><%= link_to current_user.username, edit_user_path(@user), :class => "userlink" %></div>
   <%= image_tag current_user.url %>
-<% if flash[:notice] %>
-  <div class="notice"><%= flash[:notice] %></div>
-<% end %>
-<ul>
-  <%= render 'rants/form' %>
-</ul>
+
+  <% if flash[:notice] %>
+    <div class="notice"><%= flash[:notice] %></div>
+  <% end %>
+  <ul>
+    <%= render 'rants/form' %>
+  </ul>
 </div>
-  <body>
 <%= yield %>
 </body>
 </html>

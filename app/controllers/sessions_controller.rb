@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
       session[:user_id] = @user.id
       redirect_to dashboard_path(@user.id)
     else
-      @user = User.new(username: params[:user][:username])
+      @user = User.new
       @user.errors[:base] << "Username / password is invalid"
       render :new
     end
