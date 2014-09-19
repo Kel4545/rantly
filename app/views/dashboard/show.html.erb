@@ -6,7 +6,7 @@
     <% user.rants.each do |rant| %>
       <%= link_to rant.rant, user_rant_path(rant.user_id, rant.id) %>
       <br>
-      <%= link_to "Follow", :class => "button following" %>
+      <%= link_to "Follow", dashboard_path(@user.id), :class => "button following" %>
       <br>
       <br>
     <% end %>
@@ -19,5 +19,3 @@
   <% end %>
 </div>
 </div>
-
-<!--user_rants GET    /users/:user_id/rant-->

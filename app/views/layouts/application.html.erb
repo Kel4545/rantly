@@ -19,7 +19,6 @@
   <br>
   <div class="style"><%= link_to current_user.username, edit_user_path(@user), :class => "userlink" %></div>
   <%= image_tag current_user.url %>
-
 <% if flash[:notice] %>
   <div class="notice"><%= flash[:notice] %></div>
 <% end %>
