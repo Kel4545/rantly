@@ -20,7 +20,11 @@ class FollowsController < ApplicationController
       redirect_to dashboard_path(@user.id)
     end
   end
+
+
+  private
+
+  def accepted_params
+    params.require(:follow).permit.merge({user_id: @user.id})
+  end
 end
-
-
-
