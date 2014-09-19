@@ -13,7 +13,8 @@ User.create!(
   lastname: "Bob",
   password: 'password',
   password_confirmation: 'password',
-  id: 3
+  id: 3,
+  url: "http://addyosmani.com/blog/wp-content/uploads/2013/04/unicorn.jpg"
 )
 
 User.create!(
