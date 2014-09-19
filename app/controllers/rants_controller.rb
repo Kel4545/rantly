@@ -2,6 +2,13 @@ class RantsController < ApplicationController
 
   def show
     @rant = Rant.find(params[:id])
+    @user = User.find(params[:user_id])
+  end
+
+  def index
+    @rant = Rant.new
+    @rants = Rant.all
+    @user = User.find(params[:user_id])
   end
 
   def new
@@ -25,7 +32,6 @@ class RantsController < ApplicationController
     flash[:notice] = "Rant was deleted successfully!"
     redirect_to dashboard_path(@user.id)
   end
-
 
   private
 

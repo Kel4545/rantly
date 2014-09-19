@@ -5,10 +5,6 @@ class UsersController < ApplicationController
     @rant = Rant.all
   end
 
-  def index
-
-  end
-
   def new
     @user = User.new
     render :layout => "root"
