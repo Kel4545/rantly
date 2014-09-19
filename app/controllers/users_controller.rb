@@ -1,8 +1,12 @@
 class UsersController < ApplicationController
 
   def show
-  @user = User.find(params[:id])
-  @rant = Rant.all
+    @user = User.find(params[:id])
+    @rant = Rant.all
+  end
+
+  def index
+
   end
 
   def new
@@ -45,5 +49,4 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @user.destroy
   end
-
 end

@@ -12,11 +12,27 @@ User.create!(
   firstname: "Bacon",
   lastname: "Bob",
   password: 'password',
-  password_confirmation: 'password'
+  password_confirmation: 'password',
+  id: 3
+)
+
+User.create!(
+  username: "Kelly",
+  firstname: "Kelly",
+  lastname: "Pederson",
+  password: 'password',
+  password_confirmation: 'password',
+  id: 4
 )
 
 Rant.create!(
   rant: "I am a delicious Bacon Bob! I love to eat Bacon, Bacon and more Bacon. Bacon Bacon Bacon Bacon Bacon Bacon Bacon Bacon Bacon Bacon Bacon Bacon",
   about: "Breakfast sandwich",
   user_id: 3
+)
+
+Rant.create!(
+  rant: "Unicorn planet",
+  about: "heeeeeeeeeeey",
+  user_id: 4
 )
