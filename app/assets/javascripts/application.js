@@ -18,14 +18,14 @@
 
 $(document).ready(function(){
 //to change the text
-  $('.following').hover(function(){
+  $('.follows').hover(function(){
     $(this).text("Unfollow");
   },function(){
     $(this).text("Following");
   });
-  //for toggle the class following/follow When click
-  $('.following').click(function(){
-    $(this).toggleClass('following follow').unbind("hover");
+  //for toggle the class follows/follow When click
+  $('.follows').click(function(){
+    $(this).toggleClass('follows follow').unbind("hover");
     if($(this).is('.follow')){
       $(this).text("Follow");
     }
