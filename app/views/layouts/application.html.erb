@@ -15,10 +15,19 @@
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
+<div class="user">
+  <br>
+  <div class="style"><%= link_to current_user.username, edit_user_path(@user), :class => "userlink" %></div>
+  <%= image_tag current_user.url %>
 <body>
 <% if flash[:notice] %>
   <div class="notice"><%= flash[:notice] %></div>
 <% end %>
+<ul>
+  <%= render 'rants/form' %>
+</ul>
 <%= yield %>
 </body>
+</div>
 </html>
+
