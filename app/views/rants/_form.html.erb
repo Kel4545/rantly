@@ -1,10 +1,10 @@
 <%= form_for [@user, @rant] do |f| %>
   <div class="errors">
-  <% if f.object.errors.any? %>
-    <ul>
-      <% f.object.errors.full_messages.each do |error| %>
-        <li> <%= error %> </li>
-      <% end %>
+    <% if f.object.errors.any? %>
+      <ul>
+        <% f.object.errors.full_messages.each do |error| %>
+          <li> <%= error %> </li>
+        <% end %>
     </ul>
   <% end %>
     </div>
