@@ -1,4 +1,4 @@
-<%= User.find(params[:user_id]).username %>
+<%= link_to User.find(params[:user_id]).username, user_rants_path(@user.id) %>
 <%= Rant.find(params[:id]).rant %>
 
 
