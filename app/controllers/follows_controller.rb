@@ -21,6 +21,12 @@ class FollowsController < ApplicationController
     end
   end
 
+  def destroy
+    @follow = Follow.find(params[:id])
+    @follow.destroy!
+    redirect_to dashboard_path(@user.id)
+  end
+
 
   private
 

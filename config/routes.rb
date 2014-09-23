@@ -6,9 +6,10 @@ Rails.application.routes.draw do
 
 
   resources :users do
-    resources :rants
     resources :follows
+    resources :rants do
+      resources :favorites
+    end
   end
-
   resources :dashboard
-  end
+end
