@@ -1,23 +1,26 @@
 <div class="rants">
   <div class="latest_rants">
-  <h1> Latest Rants</h1>
-  <% other_users.each do |user| %>
-  <h4>  <%= link_to user.firstname, user_rants_path(user.id) %></h4>
-    <% user.rants.each do |rant| %>
-      <%= link_to rant.rant, user_rant_path(rant.user_id, rant.id) %> <%= link_to "Favorite", user_rant_favorite_path(rant.user_id, rant.id, user.id) %>
-      <br>
-      <%= link_to "Follow", dashboard_path(@user.id), :class => "button following" %>
-      <br>
-      <br>
-    <% end %>
+    <h1> Latest Rants</h1>
+    <% other_users.each do |user| %>
+      <h4><%= link_to user.firstname, user_rants_path(user.id) %></h4>
+      <% if follow %>
+        <%= link_to "Follow", :method => :post %>
+      <% else %>
+        <%= link_to "Unfollow", :method => :delete %>
+      <% end %>
+      <% user.rants.each do |rant| %>
+        <%= link_to rant.rant, user_rant_path(rant.user_id, rant.id) %> <%= link_to "Favorite" %>
+        <br>
+        <br>
+        <br>
+      <% end %>
       </div>
       <div class="my_rants">
-    <h1> My Rants</h1>
-    <% current_user.rants.each do |rant| %>
-      <li><%= link_to rant.rant, :class => "link" %></li> <%= link_to "Delete", user_rant_path(rant.user_id, rant.id), :class => "delete", :method => :delete %>
+        <h1> My Rants</h1>
+        <% current_user.rants.each do |rant| %>
+          <li><%= link_to rant.rant, :class => "link" %></li> <%= link_to "Delete", user_rant_path(rant.user_id, rant.id, user.id), :class => "delete", :method => :delete %>
+        <% end %>
+      </div>
+      </div>
     <% end %>
-  <% end %>
-</div>
-</div>
-
 

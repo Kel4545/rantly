@@ -4,6 +4,7 @@ class DashboardController < ApplicationController
     @user = User.find(params[:id])
     @rant = Rant.new
     @rants = Rant.all
+    @follow = Follow.all
   end
 
 end

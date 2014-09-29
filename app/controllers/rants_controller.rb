@@ -29,8 +29,7 @@ class RantsController < ApplicationController
   def destroy
     @rant = Rant.find(params[:id])
     @rant.destroy!
-    flash[:notice] = "Rant was deleted successfully!"
-    redirect_to dashboard_path(@user.id)
+    redirect_to :back
   end
 
   private

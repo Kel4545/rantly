@@ -37,3 +37,4 @@ Rant.create!(
   about: "heeeeeeeeeeey",
   user_id: 4
 )
+

@@ -3,7 +3,7 @@
   <main class="links">
   </main>
   <nav class="join">
-    <%= link_to "Dashboard", dashboard_path(@user.id) %>  <%= link_to  "Following" , user_follows_path(@user.id) %> <%= link_to "Favorites" %>   <%= link_to "Search" %>
+    <%= link_to "Dashboard", dashboard_path(@user.id, @rant) %>  <%= link_to  "Following" , user_follows_path(@user.id) %> <%= link_to "Favorites" %>   <%= link_to "Search" %>
     <%= link_to "LOGOUT".html_safe, signout_path, :class => "green" %>
   </nav>
 </header>

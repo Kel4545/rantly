@@ -1,36 +1,42 @@
 class FollowsController < ApplicationController
 
   def index
-    @user = User.find(params[:user_id])
-    @rant = Rant.new
-    @rants = Rant.all
+    render :layout => "followsheader"
+    @users = session[:user_id]
+    follow_ids = Follow.where(user_id: @users)
+    @follow = []
+    if follow_ids.class == nil
+      @follow << "Nothing to see here"
+      # elsif
+      #   @follow << User.find(follow_ids.followee_id).username
+      #  else
+      #   follow_ids.each do |following|
+      #     User.where(id: following.follow).each { |user| @follow << user }
+      #   end
+    end
   end
 
   def new
-    @user = User.find(params[:user_id])
+    @user = User.find(params[:id])
     @follow = Follow.new
   end
 
   def create
     @user = User.find(params[:user_id])
-    @follow = Follow.new(accepted_params)
+    @follow = Follow.new
     if @follow.save
-      redirect to dashboard_path(@user.id)
+      redirect_to dashboard_path(@user.id)
     else
       redirect_to dashboard_path(@user.id)
     end
   end
 
-  def destroy
+  def delete
     @follow = Follow.find(params[:id])
     @follow.destroy!
-    redirect_to dashboard_path(@user.id)
+    redirect_to :back
   end
-
 
   private
-
-  def accepted_params
-    params.require(:follow).permit.merge({user_id: @user.id})
-  end
 end
+

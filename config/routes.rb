@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   resources :users do
     resources :follows
-    resources :rants do
+  resources :rants do
       resources :favorites
     end
   end
