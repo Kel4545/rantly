@@ -1,9 +1,6 @@
-<%= form_for @user, url: signin_path, html: { class: "sessions" } do |f| %>
-  <% f.object.errors.full_messages.each do |error| %>
-    <div class="errors">
-      <%= error %>
-    </div>
-  <% end %>
+<aside class="aside">
+<%= form_for @user, url: signin_path do |f| %>
+  <h2>Login</h2>
   <div>
     <%= f.label :username %>
     <%= f.text_field :username, autofocus: true %>
@@ -16,6 +13,5 @@
   <div>
     <%= f.submit "Login", :class => 'register_button' %>
 <% end %>
-<br>
-<br>
 </div>
+</aside>

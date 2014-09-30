@@ -89,9 +89,21 @@ aside.logo {
   text-decoration: underline
 }
 
+
 .login {
   background-color: grey;
-  height: 50em
+  display: flex;
+  align-items: center;
+  height: 40em;
+}
+
+.login > aside {
+  border: 1px solid black;
+  background: white;
+  width: 600px;
+  height: 300px;
+  padding: 2em;
+  margin: 0px auto 100px
 }
 
  .quote {
@@ -221,14 +233,16 @@ left: 2.6em
 }
 
 .sessions {
-    padding-top: 2em;
-    border: 2px solid black;
-    width: 50%;
-    margin-left: auto;
-    margin-right: auto;
-    background-color: white;
-    padding-right: .02em;
-   text-indent: 2em;
+  display: flex;
+
+//    padding-top: .1em;
+//    border: 2px solid black;
+//    width: 50%;
+//    margin-left: auto;
+//    margin-right: auto;
+//    background-color: white;
+//    padding-right: .02em;
+//    text-indent: 2em;
 }
 
 .rants {

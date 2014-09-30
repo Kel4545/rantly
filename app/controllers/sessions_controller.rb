@@ -11,9 +11,8 @@ class SessionsController < ApplicationController
       session[:user_id] = @user.id
       redirect_to dashboard_path(@user.id)
     else
-      @user = User.new
-      @user.errors[:base] << "Username / password is invalid"
-      render :new
+      flash[:notice] = "Username/ password are incorrect"
+      redirect_to signin_path
     end
   end
 
