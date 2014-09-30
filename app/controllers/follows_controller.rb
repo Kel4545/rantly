@@ -16,14 +16,9 @@ class FollowsController < ApplicationController
     end
   end
 
-  def new
-    @user = User.find(params[:id])
-    @follow = Follow.new
-  end
-
   def create
     @user = User.find(params[:user_id])
-    @follow = Follow.new
+    @follow = Follow.new(accepted_params)
     if @follow.save
       redirect_to dashboard_path(@user.id)
     else
@@ -38,5 +33,10 @@ class FollowsController < ApplicationController
   end
 
   private
+
+  def accepted_params
+    params.require(:follow).merge({followee_id:,  user_id: @user.id})
+  end
 end
+
 

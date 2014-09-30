@@ -53,7 +53,7 @@ aside.logo {
     justify-content: space-around;
   }
 
-  button {
+  .button {
     color: white;
   }
 
@@ -87,6 +87,11 @@ aside.logo {
   padding-top: 1.5em;
   padding-right: 1em;
   text-decoration: underline
+}
+
+.login {
+  background-color: grey;
+  height: 50em
 }
 
  .quote {
@@ -241,9 +246,6 @@ left: 2.6em
   color: red
 }
 
-.latest_rants {
-  border-bottom: 2px solid black
-}
 
 .button{
   float: left;
