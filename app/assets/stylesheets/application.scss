@@ -29,6 +29,10 @@ li {
   list-style: none;
 }
 
+a {
+  text-decoration: none
+}
+
 
 // ******************************Landing Page
 
@@ -184,14 +188,37 @@ img {
 
 // ******************************Registration
 
+
+.input {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.registration_container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: grey
+}
+
 .registration {
-  padding-top: 2em;
+  flex: 0 0 1;
   border: 2px solid black;
-  width: 50%;
-  margin-left: auto;
-  margin-right: auto;
+  padding: 1rem;
   background-color: white;
-  padding-right: .02em;
+  padding: 1 rem;
+  background-color: white;
+
+  input, textarea {
+    font-size: 1rem;
+    padding: .25rem .5rem;
+    margin-bottom: 1rem;
+  }
+  textarea {
+    height: 8rem;
+  }
+
 }
 
 .register_button {
@@ -359,4 +386,8 @@ left: 2.6em
   border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
   filter: progid:dximagetransform.microsoft.gradient(startColorstr='#ffee5f5b', endColorstr='#ffbd362f', GradientType=0);
   filter: progid:dximagetransform.microsoft.gradient(enabled=false);
+}
+
+a.dashboard_button {
+  color: white;
 }

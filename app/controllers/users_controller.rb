@@ -16,12 +16,13 @@ class UsersController < ApplicationController
       firstname: params[:user][:firstname],
       lastname: params[:user][:lastname],
       bio: params[:user][:bio],
-      password: params[:user][:password])
-
+      password: params[:user][:password],
+      frequency: params[:user][:frequency])
     if @user.save
       flash[:notice] = "Thank you for registering!"
       redirect_to root_path
     else
+      flash[:notice] = "Please fill out all fields correctly"
       render :new
     end
   end
