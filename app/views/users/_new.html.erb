@@ -1,40 +1,39 @@
 <div class="registration_container">
-  <%= form_for [@user], :html => {class: 'registration'} do |f| %>
+  <%= form_for @user, :html => {class: 'registration'} do |f| %>
+    <% f.object.errors.full_messages.each do |error| %>
+       <%= error %>
+    <% end %>
     <h1>Register</h1>
 
     <div class="input">
-      <%= f.label :username %>
-      <%= f.label :password %></div>
+      <%= f.label :username, class: 'fields' %>
+      <%= f.label :password, class: 'fields' %></div>
     <div class="input">
-      <%= f.text_field :username, autofocus: true %>
-      <%= f.password_field :password, autofocus: true %></div>
+      <%= f.text_field :username, autofocus: true, class: 'fields' %>
+      <%= f.password_field :password, autofocus: true, class: 'fields' %></div>
     <div class="input">
-      <%= f.label :firstname %></div>
-    <div class="input"><%= f.text_field :firstname, autofocus: true %></div>
-    <div class="input"><%= f.label :lastname %></div>
-    <div class="input"><%= f.text_field :lastname, autofocus: true %></div>
+      <%= f.label :firstname, class: 'fields' %>
+      <%= f.label :lastname, class: 'fields' %></div>
+    <div class="input">
+     <%= f.text_field :firstname, autofocus: true, class: 'fields' %>
+     <%= f.text_field :lastname, autofocus: true, class: 'fields' %></div>
     <div class="input"><%= f.label :bio %></div>
     <div class="input"><%= f.text_field :bio, autofocus: true, :class => 'textbox' %></div>
-
-    <div>
+    <hr>
       <p>How often do you rant?</p>
-
-      <div>
+    <div class="frequency">
         <%= f.radio_button(:frequency, 'Daily') %>
         <%= f.label(:frequency_daily, 'Daily') %>
-      </div>
-      <div>
+
         <%= f.radio_button(:frequency, 'Weekly') %>
         <%= f.label(:frequency_weekly, 'Weekly') %>
-      </div>
-      <div>
+
         <%= f.radio_button(:frequency, 'Monthly') %>
         <%= f.label(:frequency_monthly, 'Monthly') %>
-      </div>
-    </div>
+
     <%= f.submit "REGISTER", :class => 'register_button' %>
 
   <% end %>
-</div>
+  </div>
 </div>
 </div>

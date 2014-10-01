@@ -22,8 +22,7 @@ class UsersController < ApplicationController
       flash[:notice] = "Thank you for registering!"
       redirect_to root_path
     else
-      flash[:notice] = "Please fill out all fields correctly"
-      render :new
+      redirect_to :back
     end
   end
 
