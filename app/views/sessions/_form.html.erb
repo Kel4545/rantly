@@ -1,17 +1,16 @@
-<aside class="aside">
-<%= form_for @user, url: signin_path do |f| %>
+<div class="container">
+<div class="login_form">
   <h2>Login</h2>
-  <div>
-    <%= f.label :username %>
-    <%= f.text_field :username, autofocus: true %>
-  </div>
-  <div>
-    <%= f.label :password %>
-    <%= f.password_field :password %>
-  </div>
-  <br>
-  <div>
-    <%= f.submit "Login", :class => 'register_button' %>
-<% end %>
+  <% if flash[:notice] %>
+    <div class="notice"><%= flash[:notice] %></div>
+  <% end %>
+  <%= form_for @user, url: signin_path do |f| %>
+    <div class="input"><%= f.label :username %></div>
+    <div class="input"><%= f.text_field :username, autofocus: true %></div>
+    <div class="input"><%= f.label :password %></div>
+    <div class="input"><%= f.password_field :password, autofocus: true %></div>
+    <hr>
+    <div class="input"><%= f.submit "LOGIN", :class => 'login_button' %></div>
+  <% end %>
 </div>
-</aside>
+</div>
