@@ -1,7 +1,7 @@
 <div class="registration_container">
   <%= form_for @user, :html => {class: 'registration'} do |f| %>
     <% f.object.errors.full_messages.each do |error| %>
-       <%= error %>
+       <div class="errors"><%= error %></div>
     <% end %>
     <h1>Register</h1>
 

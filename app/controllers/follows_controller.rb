@@ -3,26 +3,17 @@ class FollowsController < ApplicationController
   def index
     render :layout => "followsheader"
     @users = session[:user_id]
-    follow_ids = Follow.where(user_id: @users)
-    @follow = []
-    if follow_ids.class == nil
-      @follow << "Nothing to see here"
-      # elsif
-      #   @follow << User.find(follow_ids.followee_id).username
-      #  else
-      #   follow_ids.each do |following|
-      #     User.where(id: following.follow).each { |user| @follow << user }
-      #   end
+    @follows = Follow.where(user_id: @users)
     end
-  end
+
 
   def create
     @user = User.find(params[:user_id])
     @follow = Follow.new(accepted_params)
     if @follow.save
-      redirect_to dashboard_path(@user.id)
+      redirect_to :back
     else
-      redirect_to dashboard_path(@user.id)
+      redirect_to :back
     end
   end
 
@@ -35,7 +26,7 @@ class FollowsController < ApplicationController
   private
 
   def accepted_params
-    params.require(:follow).merge({followee_id:,  user_id: @user.id})
+    params.require(:follow).merge({followee_id: @user.user_id,  user_id: @user.id})
   end
 end
 

@@ -1,4 +1,4 @@
-require 'rails-helper'
+require 'rails_helper'
 require 'capybara/rails'
 require 'spec_helper'
 
@@ -14,7 +14,7 @@ feature 'Registration' do
 
   scenario "user must fill in all fields" do
     user_views_registration_page
-    click button "Join"
+    click_button "Join"
     expect(page).to have_content("First name can't be blank")
     expect(page).to have_content("Last name can't be blank")
     expect(page).to have_content("Username name can't be blank")

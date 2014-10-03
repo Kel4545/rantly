@@ -1,18 +1,12 @@
+
 <%= form_for [@user, @rant] do |f| %>
-  <div class="errors">
-    <% if f.object.errors.any? %>
-      <ul>
-        <% f.object.errors.full_messages.each do |error| %>
-          <li> <%= error %> </li>
-        <% end %>
-    </ul>
-  <% end %>
-    </div>
-    <li><%= f.label :about, "A rant about:" %></li>
+    <%= link_to current_user.username, edit_user_path(@user), :class => "userlink" %></div>
+   <%= image_tag current_user.url %>
+    <div><%= f.label :about, "A rant about:" %></div>
     <li><%= f.text_field :about, autofocus: true %></li>
     <br style="line-height:20px">
     <li><%= f.label :rant, "Rant:" %></li>
     <li><%= f.text_field :rant, autofocus: true %></li>
     <br>
     <li><%= f.submit "RANT", :class => "bigger_green" %></li>
-  <% end %>
+      <% end %>
