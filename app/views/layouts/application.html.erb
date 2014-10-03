@@ -6,13 +6,12 @@
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
-<body class="grey">
+<body>
 <%= render 'layouts/header' %>
-  <br>
-    <%= render 'rants/form' %>
-<div class="white">
+<div class="rant_container">
 <%= yield %>
-  </div>
+  <%= render 'rants/form' %>
+</div>
 </body>
 </html>
 

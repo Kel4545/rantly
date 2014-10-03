@@ -33,18 +33,30 @@ a {
   text-decoration: none;
 }
 
-.grey {
-  background-color: grey;
+.rant_container {
+ display: flex;
+ flex-direction: row;
+ align-items: stretch
 }
 
-.white{
-  top: 0;
-  background-color: white;
-  width: 60em;
-  padding-top: 0em;
-  bottom: 0;
-  float: right
+.rant {
+  -webkit-flex: 1 0 0;
+  flex: 0 0 0;
+  background-color: grey;
+  order: 1;
+  height: 34.5em
 }
+
+.latest_rants {
+  -webkit-flex: 2 0 0;
+  flex: 2 0 0;
+  background-color: white;
+  order: 2;
+  height: 34.5em;
+  padding: 1em
+}
+
+
 
 // ******************************Landing Page
 
@@ -259,9 +271,6 @@ img {
   color: green;
 }
 
-.grey {
-  background-color: grey;
-}
 
 
 .userlink {
