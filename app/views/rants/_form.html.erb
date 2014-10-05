@@ -1,14 +1,13 @@
-<div class="rant">
+<div class="rants">
 
 <%= form_for [@user, @rant] do |f| %>
  <%= link_to current_user.username, edit_user_path(@user), :class => "userlink" %>
   <%= image_tag current_user.url %>
   <%= f.label :about, "A rant about:" %>
   <%= f.text_field :about, autofocus: true %>
-  <br style="line-height:20px">
   <%= f.label :rant, "Rant:" %>
   <%= f.text_field :rant, autofocus: true %>
-  <br>
+
   <%= f.submit "RANT", :class => "bigger_green" %>
 <% end %>
 
