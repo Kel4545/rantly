@@ -36,24 +36,22 @@ a {
 .rant_container {
  display: flex;
  flex-direction: row;
- align-items: left
-
+ align-items: left;
 }
 
 .rants {
   flex: .5 0 0;
   background-color: grey;
   order: 1;
-  height: 34.5em;
+  bottom: 0;
+  padding: 0;
 }
-
 
 .latest_rants {
   flex: 2 0 0;
   background-color: white;
   order: 2;
-  height: 34.5em;
-  padding: 1em
+  padding: 2em
 }
 
 
