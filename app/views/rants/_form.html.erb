@@ -1,14 +1,16 @@
 <div class="rants">
-
-<%= form_for [@user, @rant] do |f| %>
- <%= link_to current_user.username, edit_user_path(@user), :class => "userlink" %>
-  <%= image_tag current_user.url %>
-  <%= f.label :about, "A rant about:" %>
-  <%= f.text_field :about, autofocus: true %>
-  <%= f.label :rant, "Rant:" %>
-  <%= f.text_field :rant, autofocus: true %>
-
-  <%= f.submit "RANT", :class => "bigger_green" %>
-<% end %>
+  <%= form_for [@user, @rant] do |f| %>
+    <% f.object.errors.full_messages.each do |error| %>
+      <div class="errors"><%= error %></div>
+    <% end %>
+    <%= link_to current_user.username, edit_user_path(@user), :class => "userlink" %>
+    <%= image_tag current_user.url %>
+    <hr>
+    <div><%= f.label :about, "A rant about:" %></div>
+    <%= f.text_field :about, autofocus: true %>
+    <div><%= f.label :rant, "Rant:" %></div>
+    <%= f.text_field :rant, autofocus: true %>
+    <%= f.submit "RANT", :class => "bigger_green" %>
+  <% end %>
 
 </div>

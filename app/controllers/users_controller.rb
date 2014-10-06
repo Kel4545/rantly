@@ -22,7 +22,6 @@ class UsersController < ApplicationController
       flash[:notice] = "Thank you for registering!"
       redirect_to root_path
     else
-      puts "yup"
       render :new, :layout => "root"
     end
   end

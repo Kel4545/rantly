@@ -1,9 +1,0 @@
-<%= form_for @rants, url: user_rants_path(@users) do |f| %>
-  <li><%= f.label :about, "A rant about:" %></li>
-  <li><%= f.text_field :about, autofocus: true %></li>
-  <br style="line-height:20px">
-  <li><%= f.label :rant, "Rant:" %></li>
-  <li><%= f.text_field :rant, autofocus: true %></li>
-  <br>
-  <li><%= f.submit "RANT", :class => "bigger_green" %></li>
-<% end %>

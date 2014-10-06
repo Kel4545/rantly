@@ -20,7 +20,7 @@ class RantsController < ApplicationController
     @user = User.find(params[:user_id])
     @rant = Rant.new(accepted_params)
     if @rant.save
-      redirect_to dashboard_path(@user.id), notice: "Rant was created successfully!"
+      redirect_to dashboard_path(@user.id)
     else
       redirect_to dashboard_path(@user.id)
     end
