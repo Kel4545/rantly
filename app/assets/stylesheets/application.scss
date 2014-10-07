@@ -36,7 +36,6 @@ a {
 .rant_container {
  display: flex;
  flex-direction: row;
- height: 100%;
  align-items: stretch;
 }
 
@@ -44,6 +43,7 @@ a {
   flex: .5 0 0;
   background-color: grey;
   order: 1;
+  height: 800px;
 }
 
 .latest_rants {
