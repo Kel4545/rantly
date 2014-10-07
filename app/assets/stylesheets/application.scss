@@ -37,14 +37,14 @@ a {
  display: flex;
  flex-direction: row;
  align-items: left;
+
 }
 
 .rants {
   flex: .5 0 0;
   background-color: grey;
   order: 1;
-  align-items: stretch;
-  height: 100%
+ 
 }
 
 .latest_rants {
