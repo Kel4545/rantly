@@ -17,7 +17,8 @@
 // ******************************HTML
 
 html {
-  font-family: "Comic Sans MS"
+  font-family: "Comic Sans MS";
+  height: 100%;
 }
 
 .errors {
@@ -43,7 +44,7 @@ a {
   flex: .5 0 0;
   background-color: grey;
   order: 1;
-  height: 800px;
+  overflow: auto;
 }
 
 .latest_rants {
