@@ -4,6 +4,7 @@ class FollowsController < ApplicationController
     render :layout => "followsheader"
     @users = session[:user_id]
     @follows = Follow.where(user_id: @users)
+    @user = User.find(params[:id])
     end
 
 

@@ -1,5 +1,5 @@
 <div class="latest_rants">
-  <%= User.find(params[:id]).firstname %> <%= User.find(params[:id]).lastname %>
+  <%= @user.firstname %> <%= @user.lastname %>
   <h1 style="position: relative; left: 2.6em"></h1>
   <%= image_tag current_user.url %>
 </div>
