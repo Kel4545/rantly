@@ -15,6 +15,7 @@ class FavoritesController < ApplicationController
     if @rant.save
       redirect_to :back
     else
+      flash[:notice] = "Rant is not favorited"
       redirect_to :back
     end
   end
