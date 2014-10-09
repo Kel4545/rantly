@@ -1,5 +1,9 @@
-<%=User.find(params[:user_id]).firstname %>
-<%= link_to "Following", user_rants_path(@user.id), :class => "button following" %>
+<%= @user.firstname %> <%= @user.lastname %>
+<hr>
+<%= image_tag @user.url %>
 <% User.find(params[:user_id]).rants.each do |rant| %>
   <%= rant.rant %>
+  <div><%= link_to "Favorite" %></div>
 <% end %>
+
+

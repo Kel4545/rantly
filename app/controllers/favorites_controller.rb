@@ -5,6 +5,11 @@ class FavoritesController < ApplicationController
     @user = User.find(params[:user_id])
   end
 
+  def index
+    @user = User.find(params[:user_id])
+    @favorite = Favorite.all
+  end
+
   def new
     @user = User.find(params[:user_id])
     @favorite = Favorite.new(params[:rant_id])

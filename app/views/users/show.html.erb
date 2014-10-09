@@ -1,6 +1,12 @@
-<div class="latest_rants">
-  <%= @user.firstname %> <%= @user.lastname %>
-  <h1 style="position: relative; left: 2.6em"></h1>
-  <%= image_tag current_user.url %>
-</div>
-
+<%= @user.firstname %> <%= @user.lastname %>
+<hr>
+<%= image_tag @user.url %>
+<% @user.rants.each do |rant| %>
+  <%= rant.rant %>
+  <div><%= link_to "Favorite" %></div>
+<% end %>
+<% if follow %>
+  <%= link_to "Follow", :method => :post %>
+<% else %>
+  <%= link_to "Unfollow", :method => :delete %>
+<% end %>
