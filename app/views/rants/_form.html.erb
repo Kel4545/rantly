@@ -4,12 +4,11 @@
       <div class="errors"><%= error %></div>
     <% end %>
     <%= link_to current_user.username, edit_user_path(@user), :class => "userlink" %>
-    <%= image_tag current_user.url %>
-    <hr style="-webkit-margin-end: 1em">
+    <hr>
     <div><%= f.label :about, "A rant about:" %></div>
     <%= f.text_field :about, autofocus: true %>
     <div><%= f.label :rant, "Rant:" %></div>
-    <%= f.text_field :rant, autofocus: true %>
+    <%= f.text_field :rant, autofocus: true  %>
     <%= f.submit "RANT", :class => "bigger_green" %>
   <% end %>
 </div>

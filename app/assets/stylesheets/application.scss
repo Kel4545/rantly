@@ -34,6 +34,11 @@ a {
   text-decoration: none;
 }
 
+img {
+max-height: 15%;
+min-width: 15%;
+}
+
 // ******************************RANT CONTAINER
 
 .rant_container {
@@ -49,7 +54,13 @@ a {
   order: 1;
   overflow: auto;
   text-align: center;
-  align-items: center
+  align-items: center;
+  color: white;
+  padding-top: 6.5em;
+  a.userlink {
+    color: white;
+
+  }
 }
 
 .latest_rants {
@@ -59,7 +70,9 @@ a {
   padding: 3em
 }
 
-
+.my_rants {
+  padding-top: 4em
+}
 
 // ******************************Landing Page
 

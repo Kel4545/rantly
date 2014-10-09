@@ -1,18 +1,24 @@
 <h1 style="text-align: center"> Latest Rants</h1>
+<div class="latest">
   <hr>
     <% other_users.each do |user| %>
-      <h4><%= link_to user.firstname, user_rants_path(user.id) %></h4>
+      <%= image_tag user.url %>
+     <div style="display:inline-block"><h4><%= link_to user.firstname, user_rants_path(user.id) %></h4></div>
       <% user.rants.each do |rant| %>
-        <%= link_to rant.rant, user_rant_path(rant.user_id, rant.id) %> <%= link_to "Favorite" %>
-   <% end %>
+      <div><%= link_to rant.rant, user_rant_path(rant.user_id, rant.id) %></div>
+      <div><%= link_to "Favorite" %></div>
+      <hr style="">
+<% end %>
       <% end %>
     <% if follow %>
       <%= link_to "Follow", :method => :post %>
     <% else %>
       <%= link_to "Unfollow", :method => :delete %>
     <% end %>
-<hr>
+  </div>
+<div class="my_rants">
 <h1 style="text-align: center"> My Rants</h1>
 <% current_user.rants.each do |rant| %>
 <li><%= link_to rant.rant, user_rant_path(rant.user_id, rant.id) %></li> <%= link_to "Delete", user_rant_path(rant.user_id, rant.id), :class => "delete", :method => :delete %>
 <% end %>
+</div>
