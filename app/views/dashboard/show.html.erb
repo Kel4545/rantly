@@ -1,4 +1,3 @@
-<div class="latest_rants">
 <h1 style="text-align: center"> Latest Rants</h1>
   <hr>
     <% other_users.each do |user| %>
@@ -17,4 +16,3 @@
 <% current_user.rants.each do |rant| %>
 <li><%= link_to rant.rant, user_rant_path(rant.user_id, rant.id) %></li> <%= link_to "Delete", user_rant_path(rant.user_id, rant.id), :class => "delete", :method => :delete %>
 <% end %>
-</div>

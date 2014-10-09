@@ -29,6 +29,7 @@ class UsersController < ApplicationController
   def edit
     @user = User.find(params[:id])
     @rant = Rant.new
+    render :layout => "edit"
   end
 
   def update
