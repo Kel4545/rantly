@@ -2,13 +2,13 @@ class FollowsController < ApplicationController
 
   def index
     @users = session[:user_id]
-    @follows = Follow.where(user_id: @users)
+    @follows = Follow.where(follower_id: @users)
     @user = User.find(params[:id])
   end
 
   def create
     Follow.create!({
-                     user_id: @user.id,
+                     follower_id: @user.id,
                      followee_id: params[:user_id]
                    })
     if @follow.save
