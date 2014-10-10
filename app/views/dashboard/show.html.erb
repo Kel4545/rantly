@@ -7,13 +7,13 @@
     <% user.rants.each do |rant| %>
       <div><%= link_to rant.rant, user_rant_path(rant.user_id, rant.id) %></div>
       <div><%= link_to "Favorite" %></div>
+      <% unless check_follow(user) %>
+        <%= link_to "Follow", user_follows_path(user), method: :post %>
+      <% else %>
+        <%= link_to "Unfollow", user_follow_path(user_id: user, id: @follow), method: :delete %>
+      <% end %>
       <hr style="">
     <% end %>
-  <% end %>
-  <% if follow %>
-    <%= link_to "Follow", :method => :post %>
-  <% else %>
-    <%= link_to "Unfollow", :method => :delete %>
   <% end %>
 </div>
 <div class="my_rants">

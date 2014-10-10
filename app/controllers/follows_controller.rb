@@ -1,29 +1,24 @@
 class FollowsController < ApplicationController
 
   def index
-    @users = session[:user_id]
-    @follows = Follow.where(follower_id: @users)
+    @follows = Follow.where(follower_id: @user.id)
     @user = User.find(params[:id])
   end
 
   def create
     Follow.create!({
-                     follower_id: @user.id,
+                     follower_id: current_user.id,
                      followee_id: params[:user_id]
                    })
-    if @follow.save
-      redirect_to :back
     else
       flash[:notice] = "Person is not followed"
       redirect_to :back
     end
-  end
 
-  def delete
+  def destroy
     @follow = Follow.find(params[:id])
     @follow.destroy!
     redirect_to :back
   end
-end
 
-
+end 
