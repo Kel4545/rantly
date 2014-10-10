@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @rant = Rant.new
-    @follow = Follow.all 
+    @follow = Follow.all
   end
 
   def new
