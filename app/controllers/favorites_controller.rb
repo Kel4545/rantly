@@ -16,12 +16,13 @@ class FavoritesController < ApplicationController
   end
 
   def create
-    @favorite = Favorite.new(accepted_params)
-    if @rant.save
+    Favorite.create!({
+                     user_id: current_user.id,
+                     rant_id: params[:rant_id]
+                   })
       redirect_to :back
     else
       flash[:notice] = "Rant is not favorited"
       redirect_to :back
     end
   end
-end
