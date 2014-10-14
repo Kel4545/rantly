@@ -1,4 +1,4 @@
 class Follow < ActiveRecord::Base
-  has_many :users
-  belongs_to :users
+  belongs_to :user, foreign_key: :follower_id
+  belongs_to :user, foreign_key: :followee_id
 end
