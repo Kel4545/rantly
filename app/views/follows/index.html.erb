@@ -1,3 +1,5 @@
-<% render @follows %>
+<% @follows.each do |follow| %>
+<%= follow.user.firstname %>
+  <%= follow.user.bio %>
+<% end %>
 
-<%= link_to "Unfollow" %>

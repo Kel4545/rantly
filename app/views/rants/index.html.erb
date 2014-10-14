@@ -3,7 +3,11 @@
 <%= image_tag @user.url %>
 <% User.find(params[:user_id]).rants.each do |rant| %>
   <%= rant.rant %>
-  <div><%= link_to "Favorite" %></div>
+  <% unless favorited?(rant) %>
+    <%= link_to "Favorite", user_rant_favorites_path(user.id, rant.id), method: :post %>
+  <% else %>
+    <%= link_to "Unfavorite", user_rant_favorite_path(user_id: user.id, rant_id: rant.id, id: @favorite.id), method: :delete %>
+  <% end %>
 <% end %>
 
 

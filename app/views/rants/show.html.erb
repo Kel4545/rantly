@@ -1,3 +1,7 @@
 <%= link_to @user.firstname, user_path(@user.id)  %>
 <%= @rant.rant %>
-
+<% unless favorited?(@rant) %>
+  <%= link_to "Favorite", user_rant_favorites_path(@user.id, @rant.id), method: :post %>
+<% else %>
+  <%= link_to "Unfavorite", user_rant_favorite_path(user_id: @user.id, rant_id: @rant.id, id: @favorite.id), method: :delete %>
+<% end %>

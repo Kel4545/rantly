@@ -7,6 +7,4 @@ class DashboardController < ApplicationController
     @follow = Follow.all
     @favorite = Favorite.all
   end
-
-
 end
