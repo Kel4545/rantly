@@ -1,5 +1,5 @@
 <header>
-  <aside class="logo"><%= link_to "Rant.ly", root_path, :class => "logo" %></aside>
+  <aside class="logo"><%= link_to "Rant.ly", dashboard_path(@user.id), :class => "logo" %></aside>
   <main class="links">
   <nav class="join">
     <div class ="join_vertical"><%= link_to "Dashboard", dashboard_path(@user.id, @rant), :class => "dashboard_button"%></div>

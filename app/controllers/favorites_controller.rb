@@ -23,6 +23,12 @@ class FavoritesController < ApplicationController
       redirect_to :back
     else
       flash[:notice] = "Rant is not favorited"
-      redirect_to :back
-    end
+
+  end
+
+  def destroy
+    @favorite = Favorite.find(params[:id])
+    @favorite.destroy!
+    redirect_to :back
+  end
   end

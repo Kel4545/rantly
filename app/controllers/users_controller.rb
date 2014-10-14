@@ -12,14 +12,10 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(
-      username: params[:user][:username],
-      firstname: params[:user][:firstname],
-      lastname: params[:user][:lastname],
-      bio: params[:user][:bio],
-      password: params[:user][:password],
-      frequency: params[:user][:frequency])
+    @user = User.new(required_params)
     if @user.save
+      @user.create_image(params[:user][:image])
+      set_cookie
       flash[:notice] = "Thank you for registering!"
       redirect_to root_path
     else
@@ -47,5 +43,16 @@ class UsersController < ApplicationController
   def destroy
     @user = User.find(params[:id])
     @user.destroy
+  end
+
+
+  private
+
+  def required_params
+    params.require(:user).permit(:username, :password, :firstname, :lastname, :bio, :frequency, :image)
+  end
+
+  def set_cookie
+  cookies.permanent[:registered] = true
   end
 end

@@ -11,16 +11,19 @@ User.create!(
   username: "Bacon Bob",
   firstname: "Bacon",
   lastname: "Bob",
+  bio: "I'm a bacon Bob!",
+  frequency: "daily",
   password: 'password',
   password_confirmation: 'password',
-  id: 3,
-  url: "http://addyosmani.com/blog/wp-content/uploads/2013/04/unicorn.jpg"
+  id: 3
 )
 
 User.create!(
   username: "Kelly",
   firstname: "Kelly",
   lastname: "Pederson",
+  bio: "My name is Sparkle Pony!",
+  frequency: "Monthly",
   password: 'password',
   password_confirmation: 'password',
   id: 4
