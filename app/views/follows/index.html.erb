@@ -1,1 +1,6 @@
-<%= @user.firstname %>
+<% User.find(params[:user_id]).follows.each do |follow| %>
+  <%= follow %>
+
+<%= link_to "Unfollow" %>
+
+<% end %>

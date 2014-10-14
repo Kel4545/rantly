@@ -1,8 +1,9 @@
 class FollowsController < ApplicationController
 
   def index
-    @follows = Follow.where(follower_id: @user.id)
-    @user = User.find(params[:id])
+    @follows = Follow.where(follower_id: current_user.id)
+    @rant = Rant.new
+    @user = User.find(params[:user_id])
   end
 
   def create
