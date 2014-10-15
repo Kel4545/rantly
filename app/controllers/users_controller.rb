@@ -14,7 +14,6 @@ class UsersController < ApplicationController
   def create
     @user = User.new(required_params)
     if @user.save
-      # @user.create_image(params[:user][:image])
       set_cookie
       flash[:notice] = "Thank you for registering!"
       redirect_to root_path
@@ -31,12 +30,7 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    @user.update_attributes(
-      username: params[:user][:username],
-      firstname: params[:user][:firstname],
-      lastname: params[:user][:lastname],
-      bio: params[:user][:bio],
-      password: params[:user][:password])
+    # @user.update_attributes
     redirect_to dashboard_path(@user)
   end
 
@@ -49,7 +43,7 @@ class UsersController < ApplicationController
   private
 
   def required_params
-    params.require(:user).permit(:username, :password, :firstname, :lastname, :bio, :frequency)
+    params.require(:user).permit(:username, :password, :firstname, :lastname, :bio, :frequency, :avatar)
   end
 
   def set_cookie

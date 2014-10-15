@@ -52,7 +52,6 @@ min-width: 15%;
   flex: .6 0 0;
   background-color: grey;
   order: 1;
-  overflow: auto;
   text-align: center;
   align-items: center;
   color: white;
@@ -70,10 +69,20 @@ min-width: 15%;
   padding: 3em;
 }
 
+img.image_preview{
+  display: inline-block
+}
+
 .my_rants {
   padding-top: 4em;
 }
 
+.one-rant {
+
+  * {
+    display: block;
+  }
+}
 
 
 // ******************************Landing Page

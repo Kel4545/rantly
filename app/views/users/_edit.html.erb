@@ -29,6 +29,7 @@
 
       <%= f.radio_button(:frequency, 'Monthly') %>
       <%= f.label(:frequency_monthly, 'Monthly') %>
+      <%= f.file_field :avatar, multiple: true %>
 
       <%= f.submit "Edit", :class => 'register_button' %>
 
