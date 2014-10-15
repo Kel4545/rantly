@@ -14,7 +14,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(required_params)
     if @user.save
-      @user.create_image(params[:user][:image])
+      # @user.create_image(params[:user][:image])
       set_cookie
       flash[:notice] = "Thank you for registering!"
       redirect_to root_path
@@ -49,7 +49,7 @@ class UsersController < ApplicationController
   private
 
   def required_params
-    params.require(:user).permit(:username, :password, :firstname, :lastname, :bio, :frequency, :image)
+    params.require(:user).permit(:username, :password, :firstname, :lastname, :bio, :frequency)
   end
 
   def set_cookie

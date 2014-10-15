@@ -1,5 +1,10 @@
 <% @follows.each do |follow| %>
 <%= follow.user.firstname %>
   <%= follow.user.bio %>
+  <% unless check_follow(follow.user) %>
+    <%= link_to "Follow", user_follows_path(follow.user), method: :post %>
+  <% else %>
+    <%= link_to "Unfollow", user_follow_path(user_id: follow.user, id: @follow), method: :delete %>
+  <% end %>
 <% end %>
 

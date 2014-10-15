@@ -1,6 +1,5 @@
 <%= @user.firstname %> <%= @user.lastname %>
 <hr>
-
 <%= @user.bio %>
 <% @user.rants.each do |rant| %>
   <%= rant.rant %>
@@ -11,7 +10,3 @@
 <% else %>
   <%= link_to "Unfollow", user_follow_path(user_id: @user, id: @follow), method: :delete %>
 <% end %>
-
-
-<!--user_follows_path(user)-->
-<!--follow_path(@follow)-->

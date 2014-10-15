@@ -1,0 +1,8 @@
+<% @favorite.each do |favorite| %>
+  <%= favorite.rant.rant %>
+  <% unless favorited?(favorite.rant) %>
+    <%= link_to "Favorite", user_rant_favorites_path(current_user.id, favorite.rant.id), method: :post %>
+  <% else %>
+    <%= link_to "Unfavorite", user_rant_favorite_path(current_user.id, rant_id: favorite.rant.id, id: @favorite.id), method: :delete %>
+  <% end %>
+<% end %>

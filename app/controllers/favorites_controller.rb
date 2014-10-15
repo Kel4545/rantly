@@ -8,7 +8,9 @@ class FavoritesController < ApplicationController
 
   def index
     @user = User.find(params[:user_id])
-    @favorite = Favorite.all
+    @favorite = Favorite.where(user_id: current_user.id)
+    @rant = Rant.new
+    @rants = Rant.all
   end
 
   def new
@@ -18,13 +20,12 @@ class FavoritesController < ApplicationController
 
   def create
     Favorite.create!({
-                     user_id: current_user.id,
-                     rant_id: params[:rant_id]
-                   })
-      redirect_to :back
-    else
-      flash[:notice] = "Rant is not favorited"
-
+                       user_id: current_user.id,
+                       rant_id: params[:rant_id]
+                     })
+    redirect_to :back
+  else
+    flash[:notice] = "Rant is not favorited"
   end
 
   def destroy
@@ -32,4 +33,4 @@ class FavoritesController < ApplicationController
     @favorite.destroy!
     redirect_to :back
   end
-  end
+end

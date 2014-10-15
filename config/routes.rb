@@ -5,10 +5,13 @@ Rails.application.routes.draw do
   get "signout" => "sessions#destroy", as: :signout
 
 
+
+
   resources :users do
     resources :follows
+    resources :favorites, only: [:index]
     resources :rants do
-      resources :favorites
+      resources :favorites, only: [:create, :destroy]
       resources :comments
     end
   end

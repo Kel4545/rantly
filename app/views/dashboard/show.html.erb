@@ -1,26 +1,28 @@
 <h1 style="text-align: center"> Latest Rants</h1>
 <div class="latest">
   <hr>
-  <% other_users.each do |user| %>
-    <%= image_tag user.image, :class => "images" %>
-    <div style="display:inline-block"><h4><%= link_to user.firstname, user_path(user.id) %></h4></div>
-    <% unless check_follow(user) %>
-      <%= link_to "Follow", user_follows_path(user), method: :post %>
-    <% else %>
-      <%= link_to "Unfollow", user_follow_path(user_id: user, id: @follow), method: :delete %>
-    <% end %>
-    <% user.rants.each do |rant| %>
-      <div><%= link_to rant.rant, user_rant_path(rant.user_id, rant.id) %></div>
-      <% render "comments/form" %>
-      <% unless favorited?(rant) %>
-        <%= link_to "Favorite", user_rant_favorites_path(user.id, rant.id), method: :post %>
+  <ul>
+    <% other_users.each do |user| %>
+      <div><h4><%= link_to user.firstname, user_path(user.id) %></h4></div>
+      <% unless check_follow(user) %>
+        <%= link_to "Follow", user_follows_path(user), method: :post %>
       <% else %>
-        <%= link_to "Unfavorite", user_rant_favorite_path(user_id: user.id, rant_id: rant.id, id: @favorite.id), method: :delete %>
+        <%= link_to "Unfollow", user_follow_path(user_id: user, id: @follow), method: :delete %>
       <% end %>
-      <hr style="">
+      <% user.rants.each do |rant| %>
+        <div><%= link_to rant.rant, user_rant_path(rant.user_id, rant.id) %></div>
+        <% unless favorited?(rant) %>
+          <%= link_to "Favorite", user_rant_favorites_path(user.id, rant.id), method: :post %>
+        <% else %>
+          <%= link_to "Unfavorite", user_rant_favorite_path(user_id: user.id, rant_id: rant.id, id: @favorite.id), method: :delete %>
+
+        <% end %>
+      <% end %>
+      <hr style="width:50%">
     <% end %>
-  <% end %>
+  </ul>
 </div>
+
 <div class="my_rants">
   <h1 style="text-align: center"> My Rants</h1>
   <% current_user.rants.each do |rant| %>
