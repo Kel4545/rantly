@@ -11,6 +11,7 @@
     <% end %>
     <% user.rants.each do |rant| %>
       <div><%= link_to rant.rant, user_rant_path(rant.user_id, rant.id) %></div>
+      <% render "comments/form" %>
       <% unless favorited?(rant) %>
         <%= link_to "Favorite", user_rant_favorites_path(user.id, rant.id), method: :post %>
       <% else %>

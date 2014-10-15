@@ -9,4 +9,8 @@ class Rant < ActiveRecord::Base
     search_condition = "%" + search + "%"
     find(:all, :conditions => ['title LIKE ? OR description LIKE ?', search_condition, search_condition])
   end
+
+  def count_number_favorites
+    favorites.length
+  end
 end

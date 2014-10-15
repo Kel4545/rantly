@@ -37,4 +37,8 @@ class RantsController < ApplicationController
   def accepted_params
     params.require(:rant).permit(:about, :rant).merge({user_id: @user.id})
   end
+
+  def search
+    @rants = Rant.search params[:search]
+  end
 end
