@@ -1,6 +1,7 @@
 <% @follows.each do |follow| %>
-<%= follow.user.firstname %>
-  <%= follow.user.bio %>
+  <div><%= follow.user.firstname %></div>
+  <div><%= follow.user.bio %></div>
+  <div><%= follow.user.frequency %></div>
   <% unless check_follow(follow.user) %>
     <%= link_to "Follow", user_follows_path(follow.user), method: :post %>
   <% else %>
