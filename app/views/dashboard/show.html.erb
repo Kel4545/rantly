@@ -10,10 +10,11 @@
     <% end %>
     <% user.rants.each do |rant| %>
       <div><%= link_to rant.rant, user_rant_path(rant.user_id, rant.id) %></div>
+      <%= rant.favorites_count %> -
       <% unless favorited?(rant) %>
         <%= link_to "Favorite", user_rant_favorites_path(user.id, rant.id), method: :post %>
       <% else %>
-        <%= link_to "Unfavorite", user_rant_favorite_path(user_id: user.id, rant_id: rant.id, id: @favorite.id), method: :delete %> <%= rant.favorites_count %>
+        <%= link_to "Unfavorite", user_rant_favorite_path(user_id: user.id, rant_id: rant.id, id: @favorite.id), method: :delete %>
       <% end %>
       <%= form_for [@user, rant, @comment] do |f| %>
         <% f.object.errors.full_messages.each do |error| %>

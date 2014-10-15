@@ -1,9 +1,13 @@
+
 <div class="rants">
+  <div style ="display: inline-block"><%= image_tag current_user.avatar.url(:thumb) %></div>
+
   <%= form_for [@user, @rant] do |f| %>
     <% f.object.errors.full_messages.each do |error| %>
       <div class="errors"><%= error %></div>
     <% end %>
-    <%= link_to current_user.username, edit_user_path(@user), :class => "userlink" %>
+
+   <div><%= link_to current_user.username, edit_user_path(@user), :class => "userlink" %></div>
     <hr>
     <div><%= f.label :about, "A rant about:" %></div>
     <%= f.text_field :about, autofocus: true, :class => 'littlerantbox' %>

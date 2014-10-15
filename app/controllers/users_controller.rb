@@ -31,7 +31,7 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    # @user.update_attributes
+    @user.update_attributes(required_params)
     redirect_to dashboard_path(@user)
   end
 

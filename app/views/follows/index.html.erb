@@ -1,6 +1,7 @@
 <h1>Following</h1>
-<hr> 
+<hr>
 <% @follows.each do |follow| %>
+  <%= image_tag follow.user.avatar.url(:thumb) %>
   <div><%= follow.user.firstname %> <%= follow.user.lastname %></div>
   <% unless check_follow(follow.user) %>
    <%= link_to "Follow", user_follows_path(follow.user), method: :post %>
