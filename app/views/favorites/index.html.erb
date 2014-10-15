@@ -1,3 +1,5 @@
+<h1>Favorites</h1>
+<hr> 
 <% @favorite.each do |favorite| %>
   <%= favorite.rant.rant %>
   <% unless favorited?(favorite.rant) %>

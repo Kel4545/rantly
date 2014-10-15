@@ -1,5 +1,5 @@
 <h1>Following</h1>
-
+<hr> 
 <% @follows.each do |follow| %>
   <div><%= follow.user.firstname %> <%= follow.user.lastname %></div>
   <% unless check_follow(follow.user) %>
