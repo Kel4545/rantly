@@ -19,14 +19,16 @@ class FavoritesController < ApplicationController
   end
 
   def create
-    Favorite.create!({
+   @favorite = Favorite.create!({
                        user_id: current_user.id,
-                       rant_id: params[:rant_id]
+                       rant_id: params[:rant_id],
                      })
+    if @favorite.save
     redirect_to :back
   else
     flash[:notice] = "Rant is not favorited"
   end
+    end
 
   def destroy
     @favorite = Favorite.find(params[:id])

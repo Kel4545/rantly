@@ -1,6 +1,7 @@
 class Rant < ActiveRecord::Base
 
   belongs_to :user
+  has_many :favorites
   validates :about, presence: true, :length => {:within => 1..40}
  # validates :rant, presence: true, :length => {:minimum => 140}
 
@@ -10,7 +11,4 @@ class Rant < ActiveRecord::Base
     find(:all, :conditions => ['title LIKE ? OR description LIKE ?', search_condition, search_condition])
   end
 
-  def count_number_favorites
-    favorites.length
-  end
 end
