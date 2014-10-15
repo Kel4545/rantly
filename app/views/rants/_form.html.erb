@@ -6,9 +6,9 @@
     <%= link_to current_user.username, edit_user_path(@user), :class => "userlink" %>
     <hr>
     <div><%= f.label :about, "A rant about:" %></div>
-    <%= f.text_field :about, autofocus: true %>
+    <%= f.text_field :about, autofocus: true, :class => 'littlerantbox' %>
     <div><%= f.label :rant, "Rant:" %></div>
-    <%= f.text_field :rant, autofocus: true  %>
+    <%= f.text_field :rant, autofocus: true, :class => 'rantbox' %>
     <%= f.submit "RANT", :class => "bigger_green" %>
   <% end %>
 </div>

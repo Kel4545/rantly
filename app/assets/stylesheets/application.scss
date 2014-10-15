@@ -35,17 +35,17 @@ a {
 }
 
 .images {
-max-height: 15%;
-min-width: 15%;
+  max-height: 15%;
+  min-width: 15%;
 }
 
 // ******************************RANT CONTAINER
 
 .rant_container {
- display: flex;
- height: 100%;
- flex-direction: row;
- align-items: stretch;
+  display: flex;
+  height: 100%;
+  flex-direction: row;
+  align-items: stretch;
 }
 
 .rants {
@@ -69,7 +69,7 @@ min-width: 15%;
   padding: 3em;
 }
 
-img.image_preview{
+img.image_preview {
   display: inline-block
 }
 
@@ -83,7 +83,6 @@ img.image_preview{
     display: block;
   }
 }
-
 
 // ******************************Landing Page
 
@@ -106,7 +105,7 @@ aside.logo {
 
 // ******************************Header
 
- header {
+header {
   background-color: #404040;
   width: 100%;
   display: flex;
@@ -116,16 +115,16 @@ aside.logo {
 }
 
 .header-nav {
-    flex: 0 0 15rem;
-    text-align: right;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-  }
+  flex: 0 0 15rem;
+  text-align: right;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
 
 .button {
-    color: white;
-  }
+  color: white;
+}
 
 a.button {
   color: white;
@@ -140,17 +139,16 @@ a.logo {
   text-decoration: none;
 }
 
- .green {
-    padding: .5rem 3rem;
-    font-size: 1.25rem;
-    background-color: green;
-    border: 2px solid black;
-    color: white;
-    text-decoration: none;
- }
+.green {
+  padding: .5rem 3rem;
+  font-size: 1.25rem;
+  background-color: green;
+  border: 2px solid black;
+  color: white;
+  text-decoration: none;
+}
 
-
- .homepage {
+.homepage {
   text-align: center;
   font-size: 200%;
   width: 960px;
@@ -159,7 +157,6 @@ a.logo {
   box-sizing: border-box;
   background: white;
 }
-
 
 .join {
   color: white;
@@ -196,7 +193,6 @@ img {
 }
 
 // ******************************Login
-
 
 .container {
   flex: 1;
@@ -238,7 +234,6 @@ img {
 
 // ******************************Registration
 
-
 .input {
   display: flex;
   flex-wrap: wrap;
@@ -259,7 +254,7 @@ img {
   border: 2px solid black;
   padding: 1rem;
   background-color: white;
-  padding: 1 rem;
+  padding: 1rem;
   background-color: white;
 
   input, textarea {
@@ -269,7 +264,8 @@ img {
   }
   textarea {
     height: 8rem;
-  }}
+  }
+}
 
 .fields {
   flex: 1;
@@ -298,26 +294,21 @@ img {
   color: green;
 }
 
-
-
 .userlink {
   color: black
 }
 
-
 .bigger_green {
-    padding: .5rem 3rem;
-    font-size: 1.25rem;
-    background-color: green;
-    color: white;
-    text-decoration: none;
-    width: 12em;
-    border: 2px solid green;
+  padding: .5rem 3rem;
+  font-size: 1.25rem;
+  background-color: green;
+  color: white;
+  text-decoration: none;
+  width: 12em;
+  border: 2px solid green;
 }
 
-
 // ******************************Rant Form
-
 
 .rant_dashboard {
   text-align: center;
@@ -329,14 +320,14 @@ img {
 }
 
 .style {
-display: flex;
-position: relative;
-//left: 2.6em
+  display: flex;
+  position: relative;
+  //left: 2.6em
 }
 
 .position {
- position: relative;
- right: 25em
+  position: relative;
+  right: 25em
 }
 
 .name {
@@ -364,6 +355,17 @@ position: relative;
   justify-content: center;
 }
 
+.rantbox {
+  flex: 1;
+  width: 14.5rem;
+  height: 12rem;
+}
+
+.littlerantbox {
+  flex: 1;
+  width: 14.5rem;
+}
+
 // ******************************Dashboard
 
 a.dashboard_button {
@@ -375,12 +377,11 @@ a.delete {
   text-decoration: underline;
 }
 
-
 .join_vertical {
   color: white;
   padding-right: 3em;
   display: inline-block;
-  border-right:1px solid green;
+  border-right: 1px solid green;
   text-decoration: underline
 }
 

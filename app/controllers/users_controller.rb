@@ -4,6 +4,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @rant = Rant.new
     @follow = Follow.all
+    @rants = Rant.all
   end
 
   def new
