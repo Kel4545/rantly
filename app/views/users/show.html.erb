@@ -1,17 +1,16 @@
-<%= @user.firstname %> <%= @user.lastname %>
-<hr>
-<% unless check_follow(@user) %>
-  <%= link_to "Follow", user_follows_path(@user), method: :post %>
+<h1><%= @user.firstname %> <%= @user.lastname %></h1>
+<% unless check_follow(@user) %><%= link_to "Follow", user_follows_path(@user), method: :post %>
 <% else %>
   <%= link_to "Unfollow", user_follow_path(user_id: @user, id: @follow), method: :delete %>
 <% end %>
-
+<hr>
+<h1><%= @user.frequency %> </h1>
 <div><%= @user.bio %></div>
-  <% @user.rants.each do |rant| %>
-    <div><%= link_to rant.rant, user_rant_path(rant.user_id, rant.id) %></div>
-    <% unless favorited?(rant) %>
-      <%= link_to "Favorite", user_rant_favorites_path(@user.id, rant.id), method: :post %>
-    <% else %>
-      <%= link_to "Unfavorite", user_rant_favorite_path(user_id: @user.id, rant_id: rant.id, id: @favorite.id), method: :delete %> <%= rant.favorites_count %>
-    <% end %>
+<% @user.rants.each do |rant| %>
+  <div><%= link_to rant.rant, user_rant_path(rant.user_id, rant.id) %></div>
+  <% unless favorited?(rant) %>
+    <%= link_to "Favorite", user_rant_favorites_path(@user.id, rant.id), method: :post %>
+  <% else %>
+    <%= link_to "Unfavorite", user_rant_favorite_path(user_id: @user.id, rant_id: rant.id, id: @favorite.id), method: :delete %> <%= rant.favorites_count %>
+  <% end %>
 <% end %>

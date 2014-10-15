@@ -1,11 +1,11 @@
+<h1>Following</h1>
+
 <% @follows.each do |follow| %>
-  <div><%= follow.user.firstname %></div>
-  <div><%= follow.user.bio %></div>
-  <div><%= follow.user.frequency %></div>
+  <div><%= follow.user.firstname %> <%= follow.user.lastname %></div>
   <% unless check_follow(follow.user) %>
-    <%= link_to "Follow", user_follows_path(follow.user), method: :post %>
+   <%= link_to "Follow", user_follows_path(follow.user), method: :post %>
   <% else %>
-    <%= link_to "Unfollow", user_follow_path(user_id: follow.user, id: @follow), method: :delete %>
+    <div><%= link_to "Unfollow", user_follow_path(user_id: follow.user, id: @follow), method: :delete %></div>
   <% end %>
 <% end %>
 
