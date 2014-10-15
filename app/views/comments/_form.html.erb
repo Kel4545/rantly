@@ -2,8 +2,6 @@
     <% f.object.errors.full_messages.each do |error| %>
       <div class="errors"><%= error %></div>
     <% end %>
-    <%= link_to current_user.username, edit_user_path(@user), :class => "userlink" %>
-    <hr>
     <div><%= f.label :comment, "A rant about:" %></div>
     <%= f.text_field :comment, autofocus: true %>
     <%= f.submit "COMMENT" %>
