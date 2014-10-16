@@ -2,7 +2,7 @@
 <% rants.each do |rant| %>
   <div class="rant_blurb">
     <div class="photo">
-  <%= link_to(rant.user.username, user_rant_path(rant.user_id, rant.id)) %>
+  <%= link_to(@user.username, user_path(@user.id)) %>
     <%= image_tag rant.user.avatar.url(:thumb), class: 'kittens' %>
          <% unless check_follow(@user) %>
            <%= link_to "Follow", user_follows_path(@user), method: :post, class: 'follow' %>
