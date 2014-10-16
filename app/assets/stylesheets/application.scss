@@ -63,10 +63,22 @@ a {
   @extend .clearfix;
 
   a.follow {
-    display: block;
+
     width: 200px;
 
   }
+}
+
+.photo {
+  display: inline-block;
+  @extend .clearfix;
+  vertical-align: top;
+
+
+  a {
+    display: block;
+  }
+
 }
 
 .rant_container {
@@ -105,6 +117,8 @@ a {
 .my_rants {
   padding-top: 4em;
 }
+
+
 
 // ******************************Landing Page
 

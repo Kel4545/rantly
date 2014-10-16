@@ -1,9 +1,9 @@
 class User < ActiveRecord::Base
   has_secure_password
-  has_attached_file :avatar, :styles => {:medium => "300x300>", :thumb => "100x100>", :convert_options => {:thumb => "-quality 75 -strip" }}, :default_url => "http://critterbabies.com/wp-content/gallery/kittens/happy-kitten-kittens-5890512-1600-1200.jpg"
-  validates_attachment :avatar, presence: true, :content_type => {:content_type => ["image/jpeg", "image/gif", "image/png"]}
+  has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/:style/missing.png"
+  validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
 
-  has_many :rants
+  has_many :rants, dependent: :destroy
   has_many :follows, foreign_key: :follower_id
   has_many :follows, foreign_key: :followee_id
   validates :username, uniqueness: {case_sensitive: false}

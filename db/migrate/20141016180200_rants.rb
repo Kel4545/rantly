@@ -3,7 +3,7 @@ class Rants < ActiveRecord::Migration
     create_table :rants do |t|
       t.string :about
       t.text :rant
-      t.string :user_id
+      t.integer :user_id
     end
   end
 end

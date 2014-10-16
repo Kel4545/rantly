@@ -1,6 +1,6 @@
 class Rant < ActiveRecord::Base
 
-  belongs_to :user
+  belongs_to :user, foreign_key: :user_id
   has_many :favorites
   validates :about, presence: true, :length => {:within => 1..40}
  # validates :rant, presence: true, :length => {:minimum => 140}

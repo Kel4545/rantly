@@ -10,9 +10,14 @@ class ApplicationController < ActionController::Base
     @other_users ||= User.where.not(id: session[:user_id])
    end
 
+  def rants
+    @rants ||= Rant.where.not(user_id: current_user.id)
+  end
+
 
   helper_method :current_user
   helper_method :other_users
+  helper_method :rants
 end
 
 

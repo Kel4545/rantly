@@ -13,9 +13,9 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(required_params)
+    @user = User.new(accepted_params)
     if @user.save
-      set_cookie
+      # set_cookie
       flash[:notice] = "Thank you for registering!"
       redirect_to root_path
     else
@@ -42,7 +42,7 @@ end
 
   private
 
-  def required_params
+  def accepted_params
     params.require(:user).permit(:username, :password, :firstname, :lastname, :bio, :frequency, :avatar)
   end
 
