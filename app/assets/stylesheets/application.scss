@@ -16,6 +16,20 @@
 
 // ******************************HTML
 
+.clearfix {
+  clear: both;
+  zoom: 1;
+  &:before, &:after {
+    content: "\0020";
+    display: block;
+    height: 0;
+    overflow: hidden;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
 html, body {
   font-family: "Comic Sans MS";
   height: 100%;
@@ -41,12 +55,19 @@ a {
 
 // ******************************RANT CONTAINER
 
+.rant-blurb {
+  @extend .clearfix;
+
+   a {
+    display: block;
+  }
+}
+
 .rant_container {
   display: flex;
-  overflow: hidden;
-  overflow: scroll;
   flex-direction: row;
   align-items: stretch;
+
 }
 
 .rants {
@@ -68,7 +89,9 @@ a {
   background-color: white;
   order: 2;
   padding: 3em;
-  overflow: scroll;
+  flex: 1
+// flex-grow: 2;
+//  display: inline
 }
 
 img.image_preview {

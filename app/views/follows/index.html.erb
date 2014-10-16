@@ -4,9 +4,8 @@
   <%= image_tag follow.user.avatar.url(:thumb) %>
   <div><%= follow.user.firstname %> <%= follow.user.lastname %></div>
   <% unless check_follow(follow.user) %>
-   <%= link_to "Follow", user_follows_path(follow.user), method: :post %>
+    <%= link_to "Follow", user_follows_path(follow.user), method: :post %>
   <% else %>
     <div><%= link_to "Unfollow", user_follow_path(user_id: follow.user, id: @follow), method: :delete %></div>
   <% end %>
 <% end %>
-
