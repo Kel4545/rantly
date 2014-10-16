@@ -15,10 +15,9 @@
 
     <%= render partial: 'rants/rant', collection: user.rants, locals: {user: user} %>
 
-    <hr style="width:50%">
     </div>
+    <hr style="width: 30%">
   <% end %>
-
   <div class="my_rants">
     <h1 style="text-align: center"> My Rants</h1>
     <% current_user.rants.each do |rant| %>
