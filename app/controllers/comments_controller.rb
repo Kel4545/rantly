@@ -3,7 +3,6 @@ class CommentsController < ApplicationController
   def create
     @rant = Rant.find(params[:rant_id])
     @comment = Comment.new(accepted_params)
-    @user = current_user.id
     if @comment.save
       redirect_to dashboard_path(current_user.id)
     else

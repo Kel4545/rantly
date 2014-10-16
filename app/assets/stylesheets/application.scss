@@ -54,7 +54,7 @@ a {
 }
 
 .avatar {
-height: 200px
+  height: 200px
 }
 
 // ******************************RANT CONTAINER
@@ -62,8 +62,10 @@ height: 200px
 .rant-blurb {
   @extend .clearfix;
 
-   a {
+  a.follow {
     display: block;
+    width: 200px;
+
   }
 }
 
@@ -75,7 +77,6 @@ height: 200px
 }
 
 .rants {
-
   width: 25%;
   background-color: grey;
   order: 1;
@@ -94,25 +95,15 @@ height: 200px
   order: 2;
   padding: 3em;
   flex: 1
-// flex-grow: 2;
-//  display: inline
 }
 
 .kittens {
-  display: inline-block;
-    height: 200px;
-    padding-right: 1em;
+  height: 200px;
+  padding-right: 1em;
 }
 
 .my_rants {
   padding-top: 4em;
-}
-
-.one-rant {
-
-  * {
-    display: block;
-  }
 }
 
 // ******************************Landing Page

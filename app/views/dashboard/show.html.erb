@@ -1,22 +1,22 @@
-
 <h1 style="text-align: center"> Latest Rants</h1>
 <hr>
 <div>
   <% other_users.each do |user| %>
     <div class="rant-blurb">
-    <h4><%= link_to user.firstname, user_path(user.id) %></h4>
-    <%= image_tag user.avatar.url(:thumb), class: 'kittens' %>
+      <h4><%= link_to user.firstname, user_path(user.id) %></h4>
+      <%= image_tag user.avatar.url(:thumb), class: 'kittens' %>
 
-    <% unless check_follow(user) %>
-      <%= link_to "Follow", user_follows_path(user), method: :post %>
-    <% else %>
-      <%= link_to "Unfollow", user_follow_path(user_id: user, id: @follow), method: :delete %>
-    <% end %>
+      <%= render partial: 'rants/rant', collection: user.rants, locals: {user: user} %>
 
-    <%= render partial: 'rants/rant', collection: user.rants, locals: {user: user} %>
+      <% unless check_follow(user) %>
+        <%= link_to "Follow", user_follows_path(user), method: :post, class: 'follow' %>
+      <% else %>
+        <%= link_to "Unfollow", user_follow_path(user_id: user, id: @follow), method: :delete, class: 'follow' %>
+      <% end %>
 
     </div>
     <hr style="width: 30%">
+
   <% end %>
   <div class="my_rants">
     <h1 style="text-align: center"> My Rants</h1>
