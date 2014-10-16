@@ -24,14 +24,13 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find(params[:id])
-    @rant = Rant.new
+    @user = current_user
     render :layout => "edit"
   end
 
   def update
-    @user = User.find(params[:id])
-    @user.update_attributes(required_params)
+    @user = current_user
+    @user.update(required_params)
     redirect_to dashboard_path(@user)
   end
 
@@ -39,7 +38,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @user.destroy
   end
-
+end
 
   private
 
@@ -50,4 +49,4 @@ class UsersController < ApplicationController
   def set_cookie
   cookies.permanent[:registered] = true
   end
-end
+

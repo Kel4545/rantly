@@ -43,20 +43,21 @@ a {
 
 .rant_container {
   display: flex;
-  height: 100%;
+  overflow: hidden;
+  overflow: scroll;
   flex-direction: row;
   align-items: stretch;
 }
 
 .rants {
-  flex: .6 0 0;
+
+  width: 25%;
   background-color: grey;
   order: 1;
   text-align: center;
   align-items: center;
   color: white;
   padding-top: 2.5em;
-  height: 120%;
   a.userlink {
     color: white;
 
@@ -64,10 +65,10 @@ a {
 }
 
 .latest_rants {
-  flex: 2 0 0;
   background-color: white;
   order: 2;
   padding: 3em;
+  overflow: scroll;
 }
 
 img.image_preview {

@@ -7,7 +7,7 @@
       <div class="errors"><%= error %></div>
     <% end %>
 
-   <div><%= link_to current_user.username, edit_user_path(@user), :class => "userlink" %></div>
+   <div><%= link_to current_user.username, edit_user_path(current_user), :class => "userlink" %></div>
     <hr>
     <div><%= f.label :about, "A rant about:" %></div>
     <%= f.text_field :about, autofocus: true, :class => 'littlerantbox' %>

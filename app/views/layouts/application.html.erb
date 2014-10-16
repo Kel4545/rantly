@@ -9,13 +9,15 @@
 <body>
 <%= render 'layouts/header' %>
 <div class="rant_container">
+  <%= render 'rants/form' %>
   <div class="latest_rants">
     <% if flash[:notice] %>
       <div class="notice"><%= flash[:notice] %></div>
     <% end %>
     <%= yield %>
-  </div>
-  <%= render 'rants/form' %>
+
+</div>
 </div>
 </body>
+
 </html>
