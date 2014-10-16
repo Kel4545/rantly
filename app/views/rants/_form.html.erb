@@ -1,5 +1,5 @@
 <div class="rants">
-  <div style ="display: inline-block"><%= image_tag current_user.avatar.url(:thumb) %></div>
+  <div style ="display: inline-block"><%= image_tag current_user.avatar.url(:thumb), class: 'avatar' %></div>
   <%= form_for [@user, @rant] do |f| %>
     <% f.object.errors.full_messages.each do |error| %>
       <div class="errors"><%= error %></div>

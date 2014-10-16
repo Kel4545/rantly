@@ -53,6 +53,10 @@ a {
   min-width: 15%;
 }
 
+.avatar {
+height: 200px
+}
+
 // ******************************RANT CONTAINER
 
 .rant-blurb {
@@ -94,8 +98,10 @@ a {
 //  display: inline
 }
 
-img.image_preview {
-  display: inline-block
+.kittens {
+  display: inline-block;
+    height: 200px;
+    padding-right: 1em;
 }
 
 .my_rants {
@@ -194,7 +200,7 @@ a.logo {
   padding-right: .5em;
 }
 
-img {
+.jeff {
   height: 200px;
   float: left;
   padding-right: 1em;
