@@ -61,9 +61,9 @@ a {
 
 .rant-blurb {
   @extend .clearfix;
+  position: absolute;
 
   a.follow {
-
     width: 200px;
 
   }
@@ -72,7 +72,6 @@ a {
 .photo {
   display: inline-block;
   @extend .clearfix;
-  vertical-align: top;
 
 
   a {

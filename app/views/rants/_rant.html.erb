@@ -7,17 +7,17 @@
          <% unless check_follow(@user) %>
            <%= link_to "Follow", user_follows_path(@user), method: :post, class: 'follow' %>
          <% else %>
-           <%= link_to "Unfollow", user_follow_path(user_id: user, id: @follow), method: :delete, class: 'follow' %>
+           <%= link_to "Unfollow", user_follow_path(user_id: @user, id: @follow), method: :delete, class: 'follow' %>
          <% end %>
          </div>
-        <div style="display:inline">
+        <div style="display:inline; position: relative">
       <%= link_to rant.rant, user_rant_path(rant.user_id, rant.id), class: 'hate' %>
-
+        </div>
   <%= rant.favorites_count %> -
     <% unless favorited?(rant) %>
       <%= link_to "Favorite", user_rant_favorites_path(@user.id, rant.id), method: :post %>
     <% else %>
-      <%= link_to "Unfavorite", user_rant_favorite_path(@user.id, rant_id: rant.id, id: @favorite.id), method: :delete %></div>
+      <%= link_to "Unfavorite", user_rant_favorite_path(@user.id, rant_id: rant.id, id: @favorite.id), method: :delete %>
     <% end %>
    <div style="float:right"><%= form_for [@user, rant, @comment] do |f| %>
       <% f.object.errors.full_messages.each do |error| %>
@@ -26,6 +26,6 @@
       <%= f.text_field :comment, autofocus: true %>
       <%= f.submit "COMMENT" %></div>
   <% end %>
-    <hr style="50%">
+    <hr>
 </div>
 <% end %>
