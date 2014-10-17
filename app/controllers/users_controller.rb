@@ -30,8 +30,12 @@ class UsersController < ApplicationController
 
   def update
     @user = current_user
-    @user.update(required_params)
-    redirect_to dashboard_path(@user)
+    @user.update_attributes(accepted_params)
+    if @user.save
+      redirect_to dashboard_path(@user)
+    else
+      flash[:notice] = "Information not saved"
+    end
   end
 
   def destroy
@@ -40,13 +44,13 @@ class UsersController < ApplicationController
   end
 end
 
-  private
+private
 
-  def accepted_params
-    params.require(:user).permit(:username, :password, :firstname, :lastname, :bio, :frequency, :avatar)
-  end
+def accepted_params
+  params.require(:user).permit(:username, :password, :firstname, :lastname, :bio, :frequency, :avatar)
+end
 
-  def set_cookie
+def set_cookie
   cookies.permanent[:registered] = true
-  end
+end
 
