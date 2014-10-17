@@ -2,13 +2,15 @@
 <% rants.each do |rant| %>
   <div class="rant_blurb">
     <div class="photo">
-  <%= link_to(@user.username, user_path(@user.id)) %>
+  <%= link_to(rant.user.username, user_path(rant.user.id)) %>
     <%= image_tag rant.user.avatar.url(:thumb), class: 'kittens' %>
-         <% unless check_follow(rant.user) %>
+         <% if rant.user != current_user %>
+        <% unless check_follow(rant.user) %>
            <%= link_to "Follow", user_follows_path(rant.user), method: :post, class: 'follow' %>
          <% else %>
            <%= link_to "Unfollow", user_follow_path(user_id: @user, id: @follow), method: :delete, class: 'follow' %>
          <% end %>
+        <% end %>
          </div>
         <div style="display:inline; position: relative">
       <%= link_to rant.rant, user_rant_path(rant.user_id, rant.id), class: 'hate' %>
