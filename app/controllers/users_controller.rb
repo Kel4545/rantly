@@ -4,7 +4,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @rant = Rant.new
     @follow = Follow.all
-    @rants = Rant.all
+    @rants = Rant.order('favorites_count ASC' )
   end
 
   def new
