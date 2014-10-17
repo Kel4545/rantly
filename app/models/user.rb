@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
   has_many :rants, dependent: :destroy
   has_many :follows, foreign_key: :follower_id
   has_many :follows, foreign_key: :followee_id
+  has_many :comments
   validates :username, uniqueness: {case_sensitive: false}
   validates :username, :firstname, :lastname, :bio, :frequency, :password, presence: true
   validates :password, :length => {:within => 8..40}

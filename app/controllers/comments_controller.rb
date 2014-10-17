@@ -4,9 +4,9 @@ class CommentsController < ApplicationController
     @rant = Rant.find(params[:rant_id])
     @comment = Comment.new(accepted_params)
     if @comment.save
-      redirect_to dashboard_path(current_user.id)
+      redirect_to :back
     else
-      redirect_to dashboard_path(current_user.id)
+      redirect_to :back
       flash[:notice] = "Your comment was not saved"
     end
   end

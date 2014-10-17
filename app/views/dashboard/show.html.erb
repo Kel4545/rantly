@@ -1,9 +1,11 @@
 <h1 style="text-align: center"> Latest Rants</h1>
-    <hr>
+<hr>
 
-<%= render partial: 'rants/rant' %>
+<%= render partial: 'rants/user_rant' %>
 
 <h1 style="text-align: center"> My Rants</h1>
-<% current_user.rants.each do |rant| %>
-  <li><%= link_to rant.rant, user_rant_path(rant.user_id, rant.id) %></li> <%= link_to "Delete", user_rant_path(rant.user_id, rant.id), :class => "delete", :method => :delete %>
-<% end %>
+
+<%= render current_user.rants %>
+
+
+

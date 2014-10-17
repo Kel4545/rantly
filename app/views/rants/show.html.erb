@@ -10,3 +10,14 @@
 by <%= link_to @user.firstname, user_path(@user.id)  %>
 <%= image_tag @user.avatar.url(:thumb), class: 'kittens' %>
 <%= @rant.rant %>
+<%= @rant.comments.each do |comment| %>
+  <%= comment.comment %>
+  <%= comment.user.avatar.url(:thumb) %>
+<% end %>
+<%= form_for [@user, @rant, @comment] do |f| %>
+  <% f.object.errors.full_messages.each do |error| %>
+    <div class="errors"><%= error %></div>
+  <% end %>
+  <%= f.text_field :comment, autofocus: true %>
+  <%= f.submit "RANT BACK" %></div>
+<% end %>
