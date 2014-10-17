@@ -8,3 +8,5 @@ Heroku: nameless-fjord-8757
 
 
 * [Heroku](http://nameless-fjord-8757.herokuapp.com/)
+
+[![Code Climate](https://codeclimate.com/github/Kel4545/rantly/badges/gpa.svg)](https://codeclimate.com/github/Kel4545/rantly)
