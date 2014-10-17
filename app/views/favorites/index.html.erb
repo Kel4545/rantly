@@ -2,7 +2,8 @@
 <hr>
 <% @favorite.each do |favorite| %>
   <div class="favorites">
-    <p><%= favorite.rant.rant %></p>
+    <%= favorite.rant.user.username %>
+    <p><%= image_tag favorite.rant.user.avatar.url(:thumb), class: 'kittens' %></p>
     <%= favorite.rant.favorites_count %> -
     <% unless favorited?(favorite.rant) %>
      <%= link_to "Favorite", user_rant_favorites_path(current_user.id, favorite.rant.id), method: :post %>

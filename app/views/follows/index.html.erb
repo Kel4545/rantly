@@ -1,7 +1,7 @@
 <h1 style="text-align: center">Following</h1>
 <hr>
 <% @follows.each do |follow| %>
-  <%= image_tag follow.user.avatar.url(:thumb), class: 'kittens' %>
+  <%= image_tag follow.user.avatar.url(:thumb), class: 'big_kittens' %>
   <div><%= follow.user.firstname %> <%= follow.user.lastname %></div>
   <% unless check_follow(follow.user) %>
     <%= link_to "Follow", user_follows_path(follow.user), method: :post %>
