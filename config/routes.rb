@@ -15,5 +15,6 @@ Rails.application.routes.draw do
       resources :comments
     end
   end
-  resources :dashboard
+  resources :dashboard, only: [:show]
+  resources :search
 end
