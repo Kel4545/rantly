@@ -1,6 +1,7 @@
-<h1 style="text-align: center">Favorites</h1>
+<h1>Favorites</h1>
 <hr>
 <% @favorite.each do |favorite| %>
+  <div class="favorites">
   <%= favorite.rant.rant %>
   <% unless favorited?(favorite.rant) %>
     <%= link_to "Favorite", user_rant_favorites_path(current_user.id, favorite.rant.id), method: :post %>
@@ -8,3 +9,4 @@
     <%= link_to "Unfavorite", user_rant_favorite_path(current_user.id, rant_id: favorite.rant.id, id: @favorite.id), method: :delete %>
   <% end %>
 <% end %>
+</div>

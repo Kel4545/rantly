@@ -57,6 +57,10 @@ a {
   height: 200px
 }
 
+h1 {
+  text-align: center
+}
+
 // ******************************RANT CONTAINER
 
 .rant-blurb {
@@ -423,4 +427,8 @@ a.delete {
 .join {
   display: inline-block;
   padding-top: 1em;
+}
+
+.favorites {
+  display: block;
 }
