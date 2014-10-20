@@ -3,7 +3,7 @@
 
 <%= render partial: 'rants/user_rant' %>
 
-<h1> My Rants</h1>
+<h1>My Rants</h1>
 <%= image_tag current_user.avatar.url(:thumb), class: 'kittens' %>
 <%= render current_user.rants %>
 
