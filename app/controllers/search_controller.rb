@@ -5,4 +5,7 @@ class SearchController < ApplicationController
     @rant = Rant.new
   end
 
+  def index
+
+  end
 end
