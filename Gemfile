@@ -29,6 +29,10 @@ group :test, :development do
   gem "database_cleaner"
 end
 
+group :production, :staging do
+  gem 'rails_12factor'
+end
+
 group :development, :staging do
 gem 'rails_12factor'
 end
