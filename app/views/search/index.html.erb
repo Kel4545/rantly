@@ -14,13 +14,18 @@
 <% end %>
 
 <% @rants.each do |rant| %>
-
-
-
        <%= rant.about %>:</dt>
        <%= markdown(rant.rant) %></dt>
+<% end %>
 
 
+<% @title.each do |rant| %>
+  <%= rant.about %>:</dt>
+  <%= markdown(rant.rant) %></dt>
+<% end %>
 
-      <% end %>
+<% @content.each do |rant| %>
+  <%= rant.about %>:</dt>
+  <%= markdown(rant.rant) %></dt>
+<% end %>
 
