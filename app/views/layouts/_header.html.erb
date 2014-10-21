@@ -5,7 +5,7 @@
     <div class ="join_vertical"><%= link_to "Dashboard", dashboard_path(current_user.id, @rant), :class => "dashboard_button"%></div>
     <div class ="join_vertical"><%= link_to  "Following", user_follows_path(current_user.id), :class => "dashboard_button" %></div>
     <div class ="join_vertical"><%= link_to "Favorites", user_favorites_path(current_user.id), :class => "dashboard_button" %></div>
-    <div class="join vertical"><%= link_to "Search", new_user_search_path(current_user.id), :class => "dashboard_button" %></div>
+    <div class="join vertical"><%= link_to "Search", new_search_path, :class => "dashboard_button" %></div>
     <%= link_to "LOGOUT".html_safe, signout_path, :class => "green" %>
   </nav>
   </main>

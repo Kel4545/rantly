@@ -8,7 +8,6 @@ Rails.application.routes.draw do
 
 
   resources :users do
-    resources :search
     resources :follows
     resources :favorites, only: [:index]
     resources :rants do
@@ -17,4 +16,5 @@ Rails.application.routes.draw do
     end
   end
   resources :dashboard, only: [:show]
+  resources :search
 end
