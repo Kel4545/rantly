@@ -1,16 +1,11 @@
 <h1>Search</h1>
 <hr>
 
-<%= link_to "Read More" %>
 
 <%= form_tag("/search", method: "get") do %>
-
   <%= label_tag(:search, "Search for:") %>
-
   <%= text_field_tag(:search) %>
-
   <%= submit_tag("Search") %>
-
 <% end %>
 
 <% @rants.each do |rant| %>
@@ -18,14 +13,10 @@
        <%= markdown(rant.rant) %></dt>
 <% end %>
 
+<
 
-<% @title.each do |rant| %>
-  <%= rant.about %>:</dt>
-  <%= markdown(rant.rant) %></dt>
-<% end %>
 
-<% @content.each do |rant| %>
-  <%= rant.about %>:</dt>
-  <%= markdown(rant.rant) %></dt>
-<% end %>
 
+
+
+<%= link_to "Read More" %>
