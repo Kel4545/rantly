@@ -1,7 +1,6 @@
 <h1>Search</h1>
 <hr>
 
-
 <%= form_tag("/search", method: "get") do %>
   <%= label_tag(:search, "Search for:") %>
   <%= text_field_tag(:search) %>
@@ -9,14 +8,35 @@
 <% end %>
 
 <% @rants.each do |rant| %>
-       <%= rant.about %>:</dt>
-       <%= markdown(rant.rant) %></dt>
+  <%= link_to(rant.user.username, user_path(rant.user.id)) %>
+  <%= image_tag rant.user.avatar.url(:thumb), class: 'kittens' %>
+  <%= rant.about %>
+  <%= markdown(rant.rant) %>
 <% end %>
 
-<
+<% @title.each do |rant| %>
+  <%= link_to(rant.user.username, user_path(rant.user.id)) %>
+  <%= image_tag rant.user.avatar.url(:thumb), class: 'kittens' %>
+  <% rant.about %>
+  <%= markdown(rant.rant) %>
+<% end %>
+
+<% @content.each do |rant| %>
+  <%= link_to(rant.user.username, user_path(rant.user.id)) %>
+  <%= image_tag rant.user.avatar.url(:thumb), class: 'kittens' %>
+  <% rant.about %>
+  <%= markdown(rant.rant) %>
+<% end %>
+
+<% @users.each do |user| %>
+  <%= link_to(user.username, user_path(user.id)) %>
+  <%= image_tag user.avatar.url(:thumb), class: 'kittens' %>
+<% end %>
 
 
 
 
 
-<%= link_to "Read More" %>
+
+
+

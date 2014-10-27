@@ -16,10 +16,3 @@
     <%= link_to "Unfavorite", user_rant_favorite_path(user_id: @user.id, rant_id: rant.id, id: @favorite.id), method: :delete %>
   <% end %>
 <% end %> </p>
-<%= form_for [@user, @rant, @comment] do |f| %>
-  <% f.object.errors.full_messages.each do |error| %>
-    <div class="errors"><%= error %></div>
-  <% end %>
-  <%= f.text_field :comment, autofocus: true %>
-  <%= f.submit "RANT BACK" %></div>
-<% end %>

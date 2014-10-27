@@ -6,6 +6,7 @@ class UsersController < ApplicationController
     @rant = Rant.new
     @follow = Follow.all
     @rants = Rant.order('favorites_count ASC')
+    @comment = Comment.new
   end
 
   def new
@@ -29,36 +30,36 @@ class UsersController < ApplicationController
         render :new, :layout => "root"
       end
     end
+  end
 
-    def edit
-      @user = current_user
-      render :layout => "edit"
-    end
+  def edit
+    @user = current_user
+    render :layout => "edit"
+  end
 
-    def update
-      @user = current_user
-      @user.update_attributes(accepted_params)
-      if @user.save
-        redirect_to dashboard_path(@user)
-      else
-        flash[:notice] = "Information not saved"
-      end
-    end
-
-    def destroy
-      @user = User.find(params[:id])
-      @user.destroy
+  def update
+    @user = current_user
+    @user.update_attributes(accepted_params)
+    if @user.save
+      redirect_to dashboard_path(@user)
+    else
+      flash[:notice] = "Information not saved"
     end
   end
 
-  private
-
-  def accepted_params
-    params.require(:user).permit(:username, :password, :firstname, :lastname, :bio, :frequency, :avatar, :email)
+  def destroy
+    @user = User.find(params[:id])
+    @user.destroy
   end
+end
 
-  def set_cookie
-    cookies.permanent[:registered] = true
-  end
+private
+
+def accepted_params
+  params.require(:user).permit(:username, :password, :firstname, :lastname, :bio, :frequency, :avatar, :email)
+end
+
+def set_cookie
+  cookies.permanent[:registered] = true
 end
 
