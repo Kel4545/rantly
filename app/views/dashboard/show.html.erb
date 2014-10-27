@@ -4,14 +4,21 @@
 <%= render partial: 'rants/user_rant' %>
 
 <h1>My Rants</h1>
+
 <%= image_tag current_user.avatar.url(:thumb), class: 'kittens' %>
 <%= render current_user.rants %>
 
+
 <% if mentioned_rants(current_user).any? %>
   <h1>Mentioned</h1>
-
-  <% @rants.mentioned_rants(current_user).each do |rant| %>
-    <%= rant.user.firstname %>
-  <% end %>
+  <div class="rant_blurb">
+    <div class="photo">
+      <% @mentioned.each do |rant| %>
+        <%= link_to rant.user.username %>
+        <%= image_tag rant.user.avatar.url(:thumb), class: 'kittens' %>
+        <%= rant.rant %>
+        </div>
+        </div>
+      <% end %>
 <% end %>
 

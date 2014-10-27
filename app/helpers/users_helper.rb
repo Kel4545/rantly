@@ -10,6 +10,6 @@ module UsersHelper
   end
 
   def mentioned_rants(user)
-    @rants = Rant.where('rant LIKE ? AND spam <> true', '%@' + user.username + '%')
+    @mentioned = Rant.where('rant LIKE ?', '%@' + user.username + '%')
   end
 end
