@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-
+  respond_to :html, :json
 
   def show
     @user = User.find(params[:id])
@@ -16,20 +16,21 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(accepted_params)
-    # respond_to do |format|
+    respond_to do |format|
       if @user.save
-        # UserMailer.registration_confirmation(@user).deliver
-        #
-        # # format.html { redirect_to(@user, :notice => 'User was successfully created.') }
-        # # format.json { render :json => @user, :status => :created, :location => @user }
+        UserMailer.registration_confirmation(@user).deliver
+        format.html { redirect_to(@user, :notice => 'User was successfully created.') }
+        format.json { render :json => @user, :status => :created, :location => @user }
         set_cookie
         flash[:notice] = "Thank you for registering!"
         redirect_to root_path
       else
-       render :new, :layout => "root"
+        format.html {render :new, :layout => "root"}
+        format.json { render json: @user.errors }
       end
     end
   end
+
 
   def edit
     @user = current_user
@@ -50,7 +51,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @user.destroy
   end
-
+end
 
 private
 
