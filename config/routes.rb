@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :users
+
   root "root#show"
   get "signin" => "sessions#new", as: :signin
   post "signin" => "sessions#create"
