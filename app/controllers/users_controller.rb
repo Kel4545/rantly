@@ -18,15 +18,14 @@ class UsersController < ApplicationController
     @user = User.new(accepted_params)
     respond_to do |format|
       if @user.save
-        UserMailer.registration_confirmation(@user).deliver
-        format.html { redirect_to(@user, :notice => 'User was successfully created.') }
-        format.json { render :json => @user, :status => :created, :location => @user }
         set_cookie
+        UserMailer.welcome_email(@user).deliver
+        UserMailer.registration_confirmation(@user).deliver
         flash[:notice] = "Thank you for registering!"
         redirect_to root_path
       else
         format.html {render :new, :layout => "root"}
-        format.json { render json: @user.errors }
+        format.json {render json: @user.errors }
       end
     end
   end
