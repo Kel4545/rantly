@@ -12,6 +12,8 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'bcrypt', '~> 3.1.7'
 gem "launchy"
 gem 'redcarpet'
+gem 'keen'
+gem 'aws-sdk'
 
 
 group :production do
