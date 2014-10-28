@@ -1,5 +1,6 @@
 
 <p>
 <li><%= link_to truncate(rant.rant, :length => 300, :seperator => '..'), user_rant_path(rant.user_id, rant.id) %></li>
+<a href="https://twitter.com/share" class="twitter-share-button float-right" data-text="<%= rant.rant %>">Tweet</a>
 <%= link_to "Delete", user_rant_path(rant.user_id, rant.id), :class => "delete", :method => :delete %></p>
 

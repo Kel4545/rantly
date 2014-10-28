@@ -14,6 +14,7 @@ gem "launchy"
 gem 'redcarpet'
 gem 'keen'
 gem 'aws-sdk'
+gem 'figaro'
 
 
 group :production do
