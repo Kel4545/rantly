@@ -18,15 +18,13 @@ class UsersController < ApplicationController
     @user = User.new(accepted_params)
     respond_to do |format|
       if @user.save
-        UserMailer.welcome_email(@user).deliver
-        format.html { redirect_to(@user, notice: 'User was successfully created.') }
-        format.json { render json: @user, :status => :created, location: @user }
+        UserMailer.registration_confirmation(@user, login_url+"/#{@user.sign_in_token}").deliver
+        flash[:success] = "Please Check Your Email to Verify your Registration!"
+        redirect_to (verifyemail_path)
         set_cookie
         flash[:notice] = "Thank you for registering!"
         redirect_to root_path
       else
-        format.html { render action: 'new', :layout => 'root' }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
         render :new, :layout => "root"
       end
     end
@@ -51,6 +49,12 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @user.destroy
   end
+
+  def set_complete
+    @user = User.find(params[:user])
+    @user.update_attributes(:confirmed => true)
+    redirect_to signin_path
+  end
 end
 
 private
@@ -62,4 +66,5 @@ end
 def set_cookie
   cookies.permanent[:registered] = true
 end
+
 

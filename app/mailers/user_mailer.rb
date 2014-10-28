@@ -1,10 +1,10 @@
 class UserMailer < ActiveRecord::Base
   default from: 'grumpy@rantly.com'
 
-  def welcome_email(user)
+  def registration_confirmation(user, login_url)
+    @login_url = login_url
     @user = user
-    @url = "http://nameless-fjord-8757.herokuapp.com/signin"
-    mail(:to => user.email, subject => "Welcome to Rant.ly my friend")
+    mail(:to => "#{user.name} <#{user.email}>", :subject => "Welcome to Rant.ly")
   end
 end
 

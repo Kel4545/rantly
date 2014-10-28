@@ -3,29 +3,29 @@
 
 <%= form_tag("/search", method: "get") do %>
   <%= label_tag(:search, "Search for:") %>
-  <%= text_field_tag(:search) %>
-  <%= submit_tag("Search") %>
+  <%= text_field_tag :search %>
+  <%= submit_tag "Search", :class => "green" %>
 <% end %>
 
 <% @rants.each do |rant| %>
   <%= link_to(rant.user.username, user_path(rant.user.id)) %>
   <%= image_tag rant.user.avatar.url(:thumb), class: 'kittens' %>
   <%= rant.about %>
-  <%= markdown(rant.rant) %>
+  <%= rant.rant %>
 <% end %>
 
 <% @title.each do |rant| %>
   <%= link_to(rant.user.username, user_path(rant.user.id)) %>
   <%= image_tag rant.user.avatar.url(:thumb), class: 'kittens' %>
   <% rant.about %>
-  <%= markdown(rant.rant) %>
+  <%= rant.rant %>
 <% end %>
 
 <% @content.each do |rant| %>
   <%= link_to(rant.user.username, user_path(rant.user.id)) %>
   <%= image_tag rant.user.avatar.url(:thumb), class: 'kittens' %>
   <% rant.about %>
-  <%= markdown(rant.rant) %>
+  <%= rant.rant %>
 <% end %>
 
 <% @users.each do |user| %>

@@ -12,5 +12,9 @@ class User < ActiveRecord::Base
   validates :username, :firstname, :lastname, :bio, :frequency, :password, presence: true
   validates :password, :length => {:within => 8..40}
 
+
+  def generate_sign_in_token
+    self.sign_in_token = Digest::SHA1.hexdigest([Time.now, rand].join)
+  end
 end
 

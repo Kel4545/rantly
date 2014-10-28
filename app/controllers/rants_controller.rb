@@ -35,7 +35,6 @@ class RantsController < ApplicationController
 
   def spam
    @rant = Rant.find(params[:rant_id]).update!(spam: true)
-   @rant
     redirect_to :back
   end
 
