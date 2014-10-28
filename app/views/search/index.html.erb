@@ -6,7 +6,8 @@
   <%= text_field_tag :search %>
   <%= submit_tag "Search", :class => "green" %>
 <% end %>
-
+<div class="rant_blurb">
+  <div class="photo">
 <% @rants.each do |rant| %>
   <%= link_to(rant.user.username, user_path(rant.user.id)) %>
   <%= image_tag rant.user.avatar.url(:thumb), class: 'kittens' %>
@@ -25,12 +26,14 @@
   <%= link_to(rant.user.username, user_path(rant.user.id)) %>
   <%= image_tag rant.user.avatar.url(:thumb), class: 'kittens' %>
   <% rant.about %>
-  <%= rant.rant %>
+  <%= dat_markdown(rant.rant) %>
 <% end %>
 
 <% @users.each do |user| %>
   <%= link_to(user.username, user_path(user.id)) %>
   <%= image_tag user.avatar.url(:thumb), class: 'kittens' %>
+  </div>
+    </div>
 <% end %>
 
 
