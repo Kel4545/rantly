@@ -13,8 +13,20 @@ class User < ActiveRecord::Base
   validates :password, :length => {:within => 8..40}
 
 
-  def generate_sign_in_token
-    self.sign_in_token = Digest::SHA1.hexdigest([Time.now, rand].join)
+  def self.authenticate_user(email, password)
+    user = find_by_email(email)
+    if user && user.authenticate(password)
+      user if user.email_confirmed
+    else
+      nil
+    end
+  end
+
+
+  def send_confirmation
+    self.update_column(:password_reset_token, SecureRandom.urlsafe_base64)
+    self.update_column(:password_sent_at, Time.zone.now)
+    UserMailer.send_confirmation_mail(self).deliver
   end
 end
 

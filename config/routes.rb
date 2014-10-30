@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   post "signin" => "sessions#create"
   get "signout" => "sessions#destroy", as: :signout
   get "/rants/:rant_id/spam" => "rants#spam", as: :spam
-  get "/users/set_complete", :to => "users#set_complete"
+  get "/confirmation", :to => "confirmations#show"
 
 
 
