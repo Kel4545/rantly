@@ -43,14 +43,16 @@ Rails.application.configure do
 
   # Set to :debug to see everything in the log.
   config.log_level = :info
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
 
   config.log_level = :info
   ActionMailer::Base.smtp_settings = {
-    :address        => 'smtp.sendgrid.net',
-    :port           => '587',
+    :address        => 'smtp.gmail.net',
+    :port           => 587,
     :authentication => :plain,
-    :user_name      => ENV['SENDGRID_USERNAME'],
-    :password       => ENV['SENDGRID_PASSWORD'],
+    :user_name      => ENV['GMAIL_USERNAME'],
+    :password       => ENV['GMAIL_PASSWORD'],
     :domain         => 'heroku.com',
     :enable_starttls_auto => true
   }

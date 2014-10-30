@@ -16,16 +16,17 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(accepted_params)
-    respond_to do |format|
+
       if @user.save
         set_cookie
+        Keen.publish(:sign_ups, {username: @user.username, date: @user.created_at}) if Rails.env.production?
         UserMailer.welcome_email(@user).deliver
-        UserMailer.registration_confirmation(@user).deliver
+        # UserMailer.registration_confirmation(@user).deliver
         flash[:notice] = "Thank you for registering!"
         redirect_to root_path
       else
-        format.html {render :new, :layout => "root"}
-        format.json {render json: @user.errors }
+        flash[:notice] = "Please try and register again"
+        render :new, :layout => "root"
       end
     end
   end
@@ -50,7 +51,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @user.destroy
   end
-end
+
 
 private
 
