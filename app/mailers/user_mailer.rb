@@ -7,11 +7,9 @@ class UserMailer < ActionMailer::Base
     mail(to: user.email, subject: 'Welcome to Rant.ly')
   end
 
-  # def registration_confirmation(user)
-  #   @user = user
-  #   confirmation_token = EmailConfirmer.set_confirmation_token(user)
-  #   @confirmation_url = email_confirmation_url(confirmation_token)
-  #   mail to: user.email, subject: 'Confirm Rant.ly Registration'
-  # end
+  def send_confirmation_mail(user)
+    @user = user
+    mail(to: @user.email, subject: 'User Registration confirmation')
+  end
 end
 

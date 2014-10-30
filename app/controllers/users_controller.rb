@@ -21,6 +21,7 @@ class UsersController < ApplicationController
         set_cookie
         Keen.publish(:sign_ups, {username: @user.username, date: @user.created_at}) if Rails.env.production?
         UserMailer.welcome_email(@user).deliver
+        @user.send_confirmation
         # UserMailer.registration_confirmation(@user).deliver
         flash[:notice] = "Thank you for registering!"
         redirect_to root_path
@@ -52,6 +53,16 @@ class UsersController < ApplicationController
     @user.destroy
   end
 
+def account_confirmation
+  @user = User.find_by_password_reset_token(params[:token])
+  if(@user)
+    @user.update_column(:email_confirmed, true)
+    @user.update_column(:password_reset_token, nil)
+    redirect_to login_url, :notice => "Account confirmed"
+  else
+    redirect_to login_url, :notice => "Account could not be confirmed"
+  end
+end
 
 private
 
@@ -62,5 +73,6 @@ end
 def set_cookie
   cookies.permanent[:registered] = true
 end
+
 
 
