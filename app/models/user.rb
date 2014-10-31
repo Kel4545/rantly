@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  # before_create :generate_token
 
   has_secure_password
   has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/:style/missing.png"
@@ -16,7 +17,7 @@ class User < ActiveRecord::Base
   def self.authenticate_user(email, password)
     user = find_by_email(email)
     if user && user.authenticate(password)
-      user if user.email_confirmed
+      user if user.confirmed
     else
       nil
     end
@@ -28,5 +29,14 @@ class User < ActiveRecord::Base
     self.update_column(:password_sent_at, Time.zone.now)
     UserMailer.send_confirmation_mail(self).deliver
   end
+
+  protected
+
+  # def generate_token
+  #   self.token = loop do
+  #     random_token = SecureRandom.urlsafe_base64(nil, false)
+  #     break random_token unless User.exists?(token: random_token)
+  #   end
+  # end
 end
 
