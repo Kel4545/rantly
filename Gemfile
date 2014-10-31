@@ -30,7 +30,6 @@ group :test, :development do
   gem "selenium-webdriver"
   gem "font-awesome-rails"
   gem "database_cleaner"
-  gem "letter_opener"
 end
 
 group :production, :staging do

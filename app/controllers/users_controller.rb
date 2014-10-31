@@ -17,12 +17,11 @@ class UsersController < ApplicationController
   def create
     @user = User.new(accepted_params)
 
-      if @user.save
+      if @user.save!
         set_cookie
         Keen.publish(:sign_ups, {username: @user.username, date: @user.created_at}) if Rails.env.production?
         UserMailer.welcome_email(@user).deliver
         @user.send_confirmation
-        # UserMailer.registration_confirmation(@user).deliver
         flash[:notice] = "Thank you for registering!"
         redirect_to root_path
       else
@@ -71,6 +70,15 @@ end
 
 def set_cookie
   cookies.permanent[:registered] = true
+end
+
+def check_signed_in
+  if !signed_in?
+    flash.alert.now = "Please sign in to continue"
+    redirect_to root_url
+  else
+    @user = current_user
+  end
 end
 
 

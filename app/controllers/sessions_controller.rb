@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+  before_action :check_signed_in, except: :destroy
 
   def new
     @user = User.new
@@ -19,5 +20,14 @@ class SessionsController < ApplicationController
   def destroy
     session.destroy
     redirect_to signin_path
+  end
+
+  private
+
+  def check_signed_in
+    if signed_in?
+      flash.now.alert = "Already signed in"
+      redirect_to root_path
+    end
   end
 end
