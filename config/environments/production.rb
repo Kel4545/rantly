@@ -48,7 +48,7 @@ Rails.application.configure do
 
   config.log_level = :info
   ActionMailer::Base.smtp_settings = {
-    :address        => 'smtp.gmail.net',
+    :address        => 'smtp.gmail.com',
     :port           => 587,
     :authentication => :plain,
     :user_name      => ENV['GMAIL_USERNAME'],
