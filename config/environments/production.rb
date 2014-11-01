@@ -58,6 +58,7 @@ Rails.application.configure do
   }
 
   config.action_mailer.default_url_options = { :host => 'nameless-fjord-8757.herokuapp.com' }
+  Rails.application.routes.default_url_options[:host] = 'nameless-fjord-8757.herokuapp.com'
 
 
   # Prepend all log lines with the follows tags.

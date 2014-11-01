@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-
-  resources :users
+  # default_url_options :host => "example.com"
 
   root "root#show"
   get "signin" => "sessions#new", as: :signin

@@ -3,7 +3,7 @@ class UserMailer < ActionMailer::Base
 
   def welcome_email(user)
     @user = user
-    @url = default_url_options[:host]
+    @url = url
     mail(to: @user.email, from: "ihaterantly@gmail.com", subject: 'Welcome to Rant.ly')
   end
 
