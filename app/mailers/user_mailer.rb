@@ -1,5 +1,5 @@
 class UserMailer < ActionMailer::Base
-  default :from => "ihaterantly@gmail.com"
+  # default :from => "ihaterantly@gmail.com"
 
   def welcome_email(user)
     @user = user
