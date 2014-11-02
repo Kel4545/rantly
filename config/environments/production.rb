@@ -43,10 +43,14 @@ Rails.application.configure do
 
   # Set to :debug to see everything in the log.
   config.log_level = :info
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.perform_deliveries = true
 
-  config.log_level = :info
+  config.action_mailer.perform_deliveries  = true
+  config.action_mailer.delivery_method     = :postmark
+  config.action_mailer.postmark_settings   = { :api_key => ENV['POSTMARK_API_KEY'] }
+  config.action_mailer.default_url_options = { :host => 'nameless-fjord-8757.herokuapp.com' }
+
+  Rails.application.routes.default_url_options[:host] = 'nameless-fjord-8757.herokuapp.com'
+
   # ActionMailer::Base.smtp_settings = {
   #   :address        => 'smtp.postmarkapp.com',
   #   :authentication => :plain,
@@ -56,11 +60,7 @@ Rails.application.configure do
   #   :enable_starttls_auto => true
   # }
 
-  config.action_mailer.delivery_method   = :postmark
-  config.action_mailer.postmark_settings = { :api_key => ENV['POSTMARK_API_KEY'] }
 
-  config.action_mailer.default_url_options = { :host => 'nameless-fjord-8757.herokuapp.com' }
-  Rails.application.routes.default_url_options[:host] = 'nameless-fjord-8757.herokuapp.com'
 
 
   # Prepend all log lines with the follows tags.
