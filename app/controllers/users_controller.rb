@@ -29,36 +29,36 @@ class UsersController < ApplicationController
       render :new, :layout => "root"
     end
   end
-end
 
 
-def edit
-  @user = current_user
-  render :layout => "edit"
-end
-
-def update
-  @user = current_user
-  @user.update_attributes(accepted_params)
-  if @user.save
-    redirect_to dashboard_path(@user)
-  else
-    flash[:notice] = "Information not saved"
+  def edit
+    @user = current_user
+    render :layout => "edit"
   end
-end
 
-def destroy
-  @user = User.find(params[:id])
-  @user.destroy
-end
+  def update
+    @user = current_user
+    @user.update_attributes(accepted_params)
+    if @user.save
+      redirect_to dashboard_path(@user)
+    else
+      flash[:notice] = "Information not saved"
+    end
+  end
 
-def account_confirmation
-  @user = User.find_by_password_reset_token(params[:token])
-  if (@user)
-    @user.update_column(:confirmed, true)
-    redirect_to login_url, :notice => "Account confirmed"
-  else
-    redirect_to login_url, :notice => "Account could not be confirmed"
+  def destroy
+    @user = User.find(params[:id])
+    @user.destroy
+  end
+
+  def account_confirmation
+    @user = User.find_by_password_reset_token(params[:token])
+    if @user
+      @user.update_column(:confirmed, true)
+      redirect_to signin_path, :notice => "Account confirmed"
+    else
+      redirect_to root_path, :notice => "Account could not be confirmed"
+    end
   end
 end
 
