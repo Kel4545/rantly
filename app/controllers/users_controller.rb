@@ -21,7 +21,7 @@ class UsersController < ApplicationController
       set_cookie
       # Keen.publish(:sign_ups, {username: @user.username, date: @user.created_at}) if Rails.env.production?
       UserMailer.welcome_email(@user).deliver
-      UserMailer.send_confirmation(@user).deliver
+      UserMailer.send_confirmation_mail(@user).deliver
       flash[:notice] = "Thank you for registering!"
       redirect_to signin_path
     else
