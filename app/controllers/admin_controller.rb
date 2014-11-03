@@ -21,4 +21,13 @@ class AdminsController < ApplicationController
     end
   end
 
+  def disable_user(user)
+    if user.disabled
+      user.update_attributes(disabled: true)
+      redirect_to :back
+    else
+      user.update_attributes(disabled: false)
+      redirect_to :back
+    end
+  end
 end
