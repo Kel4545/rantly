@@ -16,7 +16,6 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(accepted_params)
-
     if @user.save!
       set_cookie
       Keen.publish(:sign_ups, {username: @user.username, date: @user.created_at}) if Rails.env.production?
@@ -29,7 +28,6 @@ class UsersController < ApplicationController
       render :new, :layout => "root"
     end
   end
-
 
   def edit
     @user = current_user
