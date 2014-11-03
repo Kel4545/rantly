@@ -9,7 +9,7 @@ class UserMailer < ActionMailer::Base
   end
 
   def send_confirmation_mail(user)
-    @token = 'something'
+    @token = user.remember_token
     @user = user
     @url = Rails.env.production? ? 'http://nameless-fjord-8757.herokuapp.com/'  : 'http://localhost:3000'
     mail(to: @user.email, subject: 'User Registration confirmation')

@@ -52,7 +52,7 @@ class UsersController < ApplicationController
   end
 
   def account_confirmation
-    @user = User.find_by_password_reset_token(params[:token])
+    @user = User.find_by_remember_token(params[:token])
     if @user
       @user.update_column(:confirmed, true)
       redirect_to signin_path, :notice => "Account confirmed"
