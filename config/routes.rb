@@ -20,4 +20,5 @@ Rails.application.routes.draw do
   end
   resources :dashboard, only: [:show]
   resources :search
+  resource :admins, only: :show
 end
