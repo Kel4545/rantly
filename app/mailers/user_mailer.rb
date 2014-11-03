@@ -15,12 +15,12 @@ class UserMailer < ActionMailer::Base
     mail(to: @user.email, subject: 'User Registration confirmation')
   end
 
-  def new_rant(ranter)
-      Following.where(followee_id: ranter.id).each do |following|
-      @user = User.find(following.follower_id)
-      @ranter = ranter
+  def new_rant(user)
+      Following.where(followee_id: user.id).each do |following|
+      @users = User.find(following.follower_id)
+      @user = user
       @url = Rails.env.production? ? 'http://nameless-fjord-8757.herokuapp.com/' : 'http://localhost:3000'
-      mail(to: @user.email, subject: "#{ranter.first_name} 'Ranted'")
+      mail(to: @users.email, subject: "#{user.firstname}" 'Ranted')
     end
   end
 end
