@@ -1,8 +1,9 @@
 class AdminsController < ApplicationController
   before_action :check_if_admin
+  layout "edit"
 
   def show
-    @rants = Rant.order('created_at DESC')
+    @rant = Rant.new
   end
 
   def rants

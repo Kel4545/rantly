@@ -21,7 +21,7 @@ class UsersController < ApplicationController
       Keen.publish(:sign_ups, {username: @user.username, date: @user.created_at}) if Rails.env.production?
       UserMailer.welcome_email(@user).deliver
       UserMailer.send_confirmation_mail(@user).deliver
-      flash[:notice] = "Thank you for registering!"
+      flash[:notice] = "Thank you for registering! Please confirm your email address to log in"
       redirect_to root_path
     else
       flash[:notice] = "Please try and register again"
