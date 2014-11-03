@@ -15,7 +15,6 @@ gem 'redcarpet'
 gem 'keen'
 gem 'aws-sdk'
 gem 'figaro'
-gem 'postmark-rails'
 
 group :production do
   gem 'rails_log_stdout',           github: 'heroku/rails_log_stdout'

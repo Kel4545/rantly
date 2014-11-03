@@ -45,20 +45,8 @@ Rails.application.configure do
   config.log_level = :info
 
   config.action_mailer.perform_deliveries  = true
-  config.action_mailer.delivery_method     = :postmark
-  config.action_mailer.postmark_settings   = { :api_key => ENV['POSTMARK_API_KEY'] }
   config.action_mailer.default_url_options = { :host => 'nameless-fjord-8757.herokuapp.com' }
-
   Rails.application.routes.default_url_options[:host] = 'nameless-fjord-8757.herokuapp.com'
-
-  # ActionMailer::Base.smtp_settings = {
-  #   :address        => 'smtp.postmarkapp.com',
-  #   :authentication => :plain,
-  #   :user_name      => ENV['GMAIL_USERNAME'],
-  #   :password       => ENV['GMAIL_PASSWORD'],
-  #   :domain         => 'heroku.com',
-  #   :enable_starttls_auto => true
-  # }
 
 
 
