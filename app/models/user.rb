@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
   before_create { generate_remember_token(:remember_token) }
 
   has_secure_password
-  has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/:style/missing.png"
+  has_attached_file :avatar, :styles => {:medium => "300x300>", :thumb => "100x100>"}, :default_url => "/images/:style/missing.png"
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
 
   has_many :rants, dependent: :destroy
@@ -22,7 +22,6 @@ class User < ActiveRecord::Base
       nil
     end
   end
-
 
   def send_confirmation
     self.update_column(:password_reset_token, SecureRandom.urlsafe_base64)

@@ -23,7 +23,7 @@ class UsersController < ApplicationController
       UserMailer.welcome_email(@user).deliver
       UserMailer.send_confirmation_mail(@user).deliver
       flash[:notice] = "Thank you for registering!"
-      redirect_to signin_path
+      redirect_to root_path
     else
       flash[:notice] = "Please try and register again"
       render :new, :layout => "root"
