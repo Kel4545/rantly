@@ -1,9 +1,10 @@
 class UserMailer < ActionMailer::Base
-  default :from => "lsears@itriagehealth.com"
+  default from: "ihaterantly@gmail.com"
+  default host: Rails.root
 
   def welcome_email(user)
     @user = user
-    @url = Rails.env.production? ? 'http://nameless-fjord-8757' : 'http://localhost:3000'
+    @url  = Rails.env.production? ? 'http://nameless-fjord-8757' : 'http://localhost:3000'
     mail(to: @user.email, subject: 'Welcome to Rant.ly')
   end
 

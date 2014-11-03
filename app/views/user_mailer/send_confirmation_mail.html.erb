@@ -10,7 +10,7 @@ Welcome, <%= @user.username %>
   your username is: <%= @user.email %>.<br/>
 </p>
 <p>
-  To login to the site, just follow this link: <%= url_for(host: 'localhost:3000', controller: 'users', action: 'account_confirmation', params: {token: @token}) %>
+  To login to the site, just follow this link: <%= url_for(host: @url, controller: 'users', action: 'account_confirmation', params: {token: @token}) %>
 </p>
 <p>Thanks for joining and have a great day!</p>
 </body>
