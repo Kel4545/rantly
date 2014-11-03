@@ -15,9 +15,9 @@ class UserMailer < ActionMailer::Base
     mail(to: @user.email, subject: 'User Registration confirmation')
   end
 
-  def new_rant(user)
+  def new_rant(user, rant)
     @user = user
-    @rant =
+    @rant = rant
     @url = Rails.env.production? ? 'http://nameless-fjord-8757.herokuapp.com/'  : 'http://localhost:3000'
     mail(to: @user.email, subject: 'New rant')
   end
