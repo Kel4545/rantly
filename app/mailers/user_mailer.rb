@@ -16,7 +16,7 @@ class UserMailer < ActionMailer::Base
   end
 
   def new_rant(user)
-      Following.where(followee_id: user.id).each do |following|
+      Follow.where(followee_id: user.id).each do |following|
       @user = User.find(following.follower_id)
       @user = user
       @url = Rails.env.production? ? 'http://nameless-fjord-8757.herokuapp.com/' : 'http://localhost:3000'
