@@ -10,7 +10,11 @@ class AdminsController < ApplicationController
   end
 
   def users
-    @users = User.all
+    if params[:sort]
+      @users = User.where(admin: false).sort_by { |user| user.rants.count }.reverse
+    else
+      @users = User.where(admin: false)
+    end
   end
 
   private
@@ -30,4 +34,4 @@ class AdminsController < ApplicationController
       redirect_to :back
     end
   end
-end
+end 
