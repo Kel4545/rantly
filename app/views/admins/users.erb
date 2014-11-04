@@ -1,0 +1,32 @@
+ <h1>Users</h1>
+  <table class="users-table">
+    <thead>
+    <tr>
+      <th>Name</th>
+      <th>Username</th>
+      <th>Email</th>
+      <th><%= link_to "Number of Rants", sort: true %></th>
+      <th>Disabled</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= "#{user.firstname} #{user.lastname}" %></td>
+        <td><%= user.username %></td>
+        <td><%= user.email %></td>
+        <td><%= user.rants.count %></td>
+        <td>
+          <%= '✓' unless user.enabled %></td>
+        <td>
+          <% if user.disable %>
+            <%= link_to "Disable" %>
+          <% else %>
+            <%= link_to "Enable" %>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>

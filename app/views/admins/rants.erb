@@ -1,0 +1,28 @@
+<h1>Rants</h1>
+<div class="spam_links">
+  <%= link_to "All", admins_rants_path %>
+  <%= link_to "Spam", admins_spam_path %>
+</div>
+<br/>
+<table class="users-table">
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Username</th>
+    <th>Email</th>
+    <th>Title</th>
+    <th>Actions</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @rants.each do |rant| %>
+    <tr>
+      <td><%= "#{rant.user.firstname} #{rant.user.lastname}" %></td>
+      <td><%= rant.user.username %></td>
+      <td><%= rant.user.email %></td>
+      <td><%= rant.about %></td>
+      <td><%= link_to "View", rant_path(rant) %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
