@@ -1,7 +1,7 @@
-<h1>Rants Ordered by Date</h1>
+
 
 <div> <% @rants.each do |rant| %>
-  <li><%= rant.rant%> - <%= rant.created_at.strftime("%m-%d-%Y") %> </li>
+  <li><%= rant.user.username %>: <%= rant.rant%> - <%= rant.created_at.strftime("%m-%d-%Y") %> </li>
 
     </div>
 <% end %>
