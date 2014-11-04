@@ -7,7 +7,8 @@ Rails.application.routes.draw do
   get "signout" => "sessions#destroy", as: :signout
   get "/rants/:rant_id/spam" => "rants#spam", as: :spam
   get "/account_confirmation", to: "users#account_confirmation"
-
+  get "/admins/rants", to: "admins#rants"
+  get "/admins/users", to: "admins#users"
 
 
   resources :users do

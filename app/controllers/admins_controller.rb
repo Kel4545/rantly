@@ -3,11 +3,10 @@ class AdminsController < ApplicationController
   layout "edit"
 
   def show
-    @rants = Rant.order('created_at DESC')
   end
 
   def rants
-
+    @rants = Rant.order('created_at DESC')
   end
 
   def users

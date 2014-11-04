@@ -1,7 +1,7 @@
 <h1>Rants</h1>
 <div class="spam_links">
-  <%= link_to "All", admins_rants_path %>
-  <%= link_to "Spam", admins_spam_path %>
+  <%= link_to "All" %>
+  <%= link_to "Spam" %>
 </div>
 <br/>
 <table class="users-table">
@@ -21,7 +21,7 @@
       <td><%= rant.user.username %></td>
       <td><%= rant.user.email %></td>
       <td><%= rant.about %></td>
-      <td><%= link_to "View", rant_path(rant) %></td>
+      <td><%= link_to "View" %></td>
     </tr>
   <% end %>
   </tbody>
