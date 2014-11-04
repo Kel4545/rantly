@@ -11,7 +11,7 @@
   <aside class="logo"><%= link_to "Rant.ly", dashboard_path(current_user.id), :class => "logo" %></aside>
   <main class="links">
     <nav class="join">
-      <div class ="join_vertical"><%= link_to "Dashboard", dashboard_path(current_user.id, @rant), :class => "dashboard_button"%></div>
+      <div class ="join_vertical"><%= link_to "Dashboard", admins_path, :class => "dashboard_button"%></div>
       <div class ="join_vertical"><%= link_to  "Rants", admins_rants_path, :class => "dashboard_button" %></div>
       <div class ="join_vertical"><%= link_to "Users", admins_users_path, :class => "dashboard_button" %></div>
       <%= link_to "LOGOUT".html_safe, signout_path, :class => "green" %>
