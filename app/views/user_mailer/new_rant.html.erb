@@ -5,9 +5,9 @@
 </head>
 <body>
 <h1>
-   <%= @ranter.first_name  %> Just ranted about
-  <%= @ranter.rants.last.subject %> here:
-  <%= user_rant_url(@ranter, @ranter.rants.last) %>
+   <%= @user.firstname  %> Just ranted about
+  <%= @user.rants.last.about %>
+
 </h1>
 </body>
 </html>

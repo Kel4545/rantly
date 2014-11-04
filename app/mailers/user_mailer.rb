@@ -17,10 +17,10 @@ class UserMailer < ActionMailer::Base
 
   def new_rant(user)
       Following.where(followee_id: user.id).each do |following|
-      @users = User.find(following.follower_id)
+      @user = User.find(following.follower_id)
       @user = user
       @url = Rails.env.production? ? 'http://nameless-fjord-8757.herokuapp.com/' : 'http://localhost:3000'
-      mail(to: @users.email, subject: "#{user.firstname}" 'Ranted')
+      mail(to: @user.email, subject: "#{user.firstname}" 'Ranted')
     end
   end
 end
