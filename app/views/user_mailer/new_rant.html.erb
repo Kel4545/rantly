@@ -7,7 +7,9 @@
 <h1>
    <%= @user.firstname  %> Just ranted about
   <%= @user.rants.last.about %>
-
+  Check it out here <%= url_for(@url) %>
+  Thanks,
+  Rantly
 </h1>
 </body>
 </html>
