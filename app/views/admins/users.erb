@@ -18,9 +18,9 @@
         <td><%= user.email %></td>
         <td><%= user.rants.count %></td>
         <td>
-          <%= '✓' unless user.enabled %></td>
+
         <td>
-          <% if user.disable %>
+          <% if user.disabled %>
             <%= link_to "Disable" %>
           <% else %>
             <%= link_to "Enable" %>

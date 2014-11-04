@@ -1,6 +1,6 @@
 class AdminsController < ApplicationController
   before_action :check_if_admin
-  layout "edit"
+  layout "admins"
 
   def show
   end
