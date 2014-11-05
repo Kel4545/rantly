@@ -34,4 +34,4 @@ class AdminsController < ApplicationController
       redirect_to :back
     end
   end
-end 
+end
