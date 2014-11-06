@@ -58,16 +58,6 @@ class UsersController < ApplicationController
       redirect_to root_path, :notice => "Account could not be confirmed"
     end
   end
-
-  def disable
-    @user = User.find(params[:id]).update!(disabled: true)
-    redirect_to :back
-  end
-
-  def enable
-    @rant = User.find(params[:id]).update!(disabled: false)
-    redirect_to :back
-  end
 end
 
 private

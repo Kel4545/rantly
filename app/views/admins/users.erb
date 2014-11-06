@@ -21,9 +21,9 @@
           <%= '✓' if user.disabled %></td>
         <td>
           <% if user.disabled %>
-            <%= link_to "Enable", enable_path(user.id) %>
+            <%= link_to "Enable", enable_path(user) %>
           <% else %>
-            <%= link_to "Disable", disable_path(user.id)  %>
+            <%= link_to "Disable", disable_path(user)  %>
           <% end %>
         </td>
       </tr>

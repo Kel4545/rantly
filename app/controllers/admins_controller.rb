@@ -21,21 +21,24 @@ class AdminsController < ApplicationController
     @rants = Rant.where(spam: true)
   end
 
+  def disable
+    @user = User.find(params[:id])
+    @user.update_attribute(:disabled, true)
+    redirect_to :back
+  end
+
+  def enable
+    @user = User.find(params[:id])
+    @user.update_attribute(:disabled, false)
+    redirect_to :back
+  end
+
+
   private
 
   def check_if_admin
     unless current_user.admin
       redirect_to root_path
-    end
-  end
-
-  def disable_user(user)
-    if user.disabled
-      user.update_attributes(disabled: true)
-      redirect_to :back
-    else
-      user.update_attributes(disabled: false)
-      redirect_to :back
     end
   end
 end
