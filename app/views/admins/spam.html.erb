@@ -23,7 +23,7 @@
         <td><%= rant.about %></td>
         <td>
           <%= link_to "Resolve" %>
-          <%= link_to "Delete" %>
+          <%= link_to "Delete", user_rant_path(rant.id), method: :destroy %>
         </td>
       </tr>
     <% end %>

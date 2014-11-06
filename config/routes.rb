@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   post "signin" => "sessions#create"
   get "signout" => "sessions#destroy", as: :signout
   get "/rants/:rant_id/spam" => "rants#spam", as: :spam
+  get "/rants/:rant_id/unspam" => "rants#unspam", as: :unspam
   get "/account_confirmation", to: "users#account_confirmation"
   get "/admins/rants", to: "admins#rants"
   get "/admins/users", to: "admins#users"
