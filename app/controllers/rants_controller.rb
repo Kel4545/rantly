@@ -21,7 +21,7 @@ class RantsController < ApplicationController
     @user = User.find(params[:user_id])
     @rant = Rant.new(accepted_params)
     if @rant.save
-      Keen.publish(:logins, {username: @user.username, date: Time.now}) if Rails.env.production?
+      Keen.publish(:rants, {username: @user.username, date: Time.now}) if Rails.env.production?
       UserMailer.new_rant(current_user).deliver
       redirect_to dashboard_path(@user.id)
     else
