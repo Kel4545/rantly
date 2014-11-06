@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get "/account_confirmation", to: "users#account_confirmation"
   get "/admins/rants", to: "admins#rants"
   get "/admins/users", to: "admins#users"
+  get "/admins/spam", to: "admins#spam"
 
 
   resources :users do
@@ -22,4 +23,5 @@ Rails.application.routes.draw do
   resources :dashboard, only: [:show]
   resources :search
   resource :admins, only: [:show]
+
 end

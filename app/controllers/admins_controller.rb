@@ -17,6 +17,10 @@ class AdminsController < ApplicationController
     end
   end
 
+  def spam
+    @rants = Rant.where(spam: true)
+  end
+
   private
 
   def check_if_admin
