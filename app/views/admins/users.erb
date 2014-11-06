@@ -18,12 +18,12 @@
         <td><%= user.email %></td>
         <td><%= user.rants.count %></td>
         <td>
-
+          <%= '✓' if user.disabled %></td>
         <td>
           <% if user.disabled %>
-            <%= link_to "Disable" %>
+            <%= link_to "Disable", disable_path(user)  %>
           <% else %>
-            <%= link_to "Enable" %>
+            <%= link_to "Enable", enable_path(user) %>
           <% end %>
         </td>
       </tr>
