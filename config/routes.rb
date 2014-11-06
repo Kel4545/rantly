@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   get "/admins/rants", to: "admins#rants"
   get "/admins/users", to: "admins#users"
   get "/admins/spam", to: "admins#spam"
+  get "/admin/impersonate/:user_id" => "admins#impersonate", as: :impersonate
+  get "/admin/neinimpersonate" => "admins#neinimpersonate", as: :neinimpersonate
 
 
   resources :users do

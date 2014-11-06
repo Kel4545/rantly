@@ -33,6 +33,19 @@ class AdminsController < ApplicationController
     redirect_to :back
   end
 
+  def impersonate
+    session[:admin_id] = current_user.id
+    session[:user_id] = params[:user_id]
+    redirect_to root_path
+  end
+
+  def neinimpersonate
+    session[:user_id] = session[:admin_id]
+    session.delete(:admin_id)
+    redirect_to root_path
+  end
+
+
 
   private
 
