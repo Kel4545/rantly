@@ -10,8 +10,7 @@
       <th>Name</th>
       <th>Username</th>
       <th>Email</th>
-      <th>Times Marked as Spam</th>
-      <th>Title</th>
+      <th>About</th>
       <th>Actions</th>
     </tr>
     </thead>
@@ -21,10 +20,9 @@
         <td><%= "#{rant.user.firstname} #{rant.user.lastname}" %></td>
         <td><%= rant.user.username %></td>
         <td><%= rant.user.email %></td>
-        
         <td><%= rant.about %></td>
         <td>
-          <%= link_to "View" %>
+          <%= link_to "Resolve" %>
           <%= link_to "Delete" %>
         </td>
       </tr>
