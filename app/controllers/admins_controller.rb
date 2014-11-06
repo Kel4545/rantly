@@ -46,7 +46,6 @@ class AdminsController < ApplicationController
   end
 
 
-
   private
 
   def check_if_admin
