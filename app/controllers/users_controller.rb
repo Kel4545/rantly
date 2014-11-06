@@ -60,12 +60,12 @@ class UsersController < ApplicationController
   end
 
   def disable
-    @user = User.find(params[:id]).update!(disable: true)
+    @user = User.find(params[:id]).update!(disabled: true)
     redirect_to :back
   end
 
   def enable
-    @rant = User.find(params[:id]).update!(disable: false)
+    @rant = User.find(params[:id]).update!(disabled: false)
     redirect_to :back
   end
 end
