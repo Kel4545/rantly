@@ -11,10 +11,13 @@ $(document).on('ready', function () {
       interval: "hourly"
     });
     client.draw(query, document.getElementById("logins_chart"), {
-      // Custom configuration here
+      chartType: "columnchart",
+      title: "Logins/Day",
+      colors: ["#38761d"],
+      width: "auto"
     });
   });
-}); 
+
 
 
 //  var client = new Keen({
