@@ -40,6 +40,10 @@ class RantsController < ApplicationController
     redirect_to :back
   end
 
+  def unspam
+    @rant = Rant.find(params[:rant_id]).update!(spam: false)
+  end
+
   private
 
   def accepted_params

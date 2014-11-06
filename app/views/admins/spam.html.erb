@@ -22,10 +22,12 @@
         <td><%= rant.user.email %></td>
         <td><%= rant.about %></td>
         <td>
-          <%= link_to "Resolve" %>
-          <%= link_to "Delete", user_rant_path(rant.id), method: :destroy %>
+          <%= link_to "Resolve", unspam_path(rant.id) %>
+          <%= link_to "Delete", user_rant_path(rant.user_id, rant.id), :method => :delete %>
         </td>
       </tr>
     <% end %>
     </tbody>
   </table>
+
+ 
