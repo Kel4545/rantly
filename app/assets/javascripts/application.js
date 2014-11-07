@@ -16,8 +16,11 @@
 //= require bootstrap-datepicker
 
 
-$(document).ready(function(){
-  $('[data-behaviour~=datephicker]').datepicker();
+$(document).ready(function() {
+
+  $('#start_date').datepicker({format: "yyyy-mm-dd", orientation: 'top auto'});
+
+  $('#end_date').datepicker({format: "yyyy-mm-dd", orientation: 'top auto'});
 });
 
 //
