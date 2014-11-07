@@ -4,7 +4,7 @@
   <%= link_to "Spam", admins_spam_path %>
 </div>
 
-<%= form_tag admin_rants_path do %>
+<%= form_tag admin_rants_path, method: 'get' do %>
   <%= text_field_tag :start_date, params[:start_date] %>
   <span>To</span>
   <%= text_field_tag :end_date, params[:end_date] %>
