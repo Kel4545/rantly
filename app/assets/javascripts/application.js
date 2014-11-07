@@ -16,16 +16,8 @@
 //= require bootstrap-datepicker
 
 
-
 $(document).ready(function(){
-  $( "button.edit_description" ).on( "click", function( event ) {
-    $(this).closest('td').find( "div.file_description_update" ).show();
-
-  });
-  $(function() {
-    $('.datepicker').datepicker({ dateFormat: 'yy-mm-dd' });
-  });
-
+  $('.datepicker').datepicker();
 });
 
 //
