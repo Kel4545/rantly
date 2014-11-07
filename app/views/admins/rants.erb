@@ -3,14 +3,10 @@
   <%= link_to "All", admins_rants_path %>
   <%= link_to "Spam", admins_spam_path %>
 </div>
-<input type="text" data-behaviour='datepicker' >
 <%= form_tag admins_rants_path, method: 'get' do %>
   <%=text_field_tag :start_date, params[:start_date] %>
   <span>To</span>
   <%= text_field_tag :end_date, params[:end_date] %>
-  <script type="text/javascript">
-    $('[data-behaviour~=datepicker]').datepicker();
-  </script>
   <%= submit_tag 'Filter', class: 'button' %>
 <% end %>
 
