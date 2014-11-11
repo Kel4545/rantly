@@ -6,7 +6,7 @@ class AdminsController < ApplicationController
   end
 
   def rants
-    @rants = Rant.order('created_at DESC')
+    @rants = Rant.where("created_at between (?) and (?)", params[:start_date], params[:end_date])
   end
 
   def users
@@ -54,3 +54,6 @@ class AdminsController < ApplicationController
     end
   end
 end
+
+
+
