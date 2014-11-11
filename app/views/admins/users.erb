@@ -8,6 +8,7 @@
       <th><%= link_to "Number of Rants", sort: true %></th>
       <th>Disabled</th>
       <th>Actions</th>
+      <th>Impersonate</th>
     </tr>
     </thead>
     <tbody>
@@ -26,6 +27,7 @@
             <%= link_to "Disable", disable_path(user)  %>
           <% end %>
         </td>
+        <td> <%= link_to "Impersonate", impersonate_path(user.id) %></td>
       </tr>
     <% end %>
     </tbody>

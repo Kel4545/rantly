@@ -36,7 +36,7 @@ class AdminsController < ApplicationController
   def impersonate
     session[:admin_id] = current_user.id
     session[:user_id] = params[:user_id]
-    redirect_to root_path
+    redirect_to dashboard_path(params[:user_id])
   end
 
   def neinimpersonate

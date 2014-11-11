@@ -19,6 +19,11 @@
       <div class ="join_vertical"><%= link_to  "Rants", admins_rants_path, :class => "dashboard_button" %></div>
       <div class ="join_vertical"><%= link_to "Users", admins_users_path, :class => "dashboard_button" %></div>
       <%= link_to "LOGOUT".html_safe, signout_path, :class => "green" %>
+      <% if current_user.admin %>
+        <%= link_to "Admins", admins_path(current_user.id) %>
+      <%elsif session[:admin_id].present? %>
+        <%= link_to "Unimpersonate", neinimpersonate_path %>
+      <% end %>
     </nav>
   </main>
 </header>
