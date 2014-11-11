@@ -1,7 +1,7 @@
 <% @rants.each do |rant| %>
     <div class="rant_blurb">
       <div class="photo">
-        <%= link_to dat_markdown(rant.user.username), user_path(rant.user.id) %>
+        <%= link_to hashtag_search(dat_markdown(rant.user.username)), user_path(rant.user.id) %>
         <%= image_tag rant.user.avatar.url(:thumb), class: 'kittens' %>
         <% if rant.user != current_user %>
           <% unless check_follow(rant.user) %>
